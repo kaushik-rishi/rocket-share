@@ -125,5 +125,17 @@ nav div.right ul{
 }
 
 
+.col{
+    width: 50%;
+    float: left;
+    padding: 20px;
+}
 
+.myfooter{
+    height: 250px;
+    width: 100%;
+}
 
+.col{
+    height:250px;
+}
