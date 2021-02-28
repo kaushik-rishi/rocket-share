@@ -124,6 +124,7 @@ nav div.right ul{
 
 }
 
+/* -------------------------------- Footer Styling -------------------------------- */
 
 .col{
     width: 50%;
@@ -134,8 +135,40 @@ nav div.right ul{
 .myfooter{
     height: 250px;
     width: 100%;
+    background-color: #474747;
+    color: azure;
+    
 }
 
-.col{
-    height:250px;
+.col div{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.col a{
+    margin: 0px 30px;
+    border-radius: 50%;
+    box-shadow: 2px 0px 1px #000000;
+}
+
+.col a:hover{
+    box-shadow: 5px 2px 2px #000000;
+}
+
+.col a:active{
+    transform: translate(1px,1px);
+    box-shadow: 3px 1px 2px #000000;
+}
+
+.col h3{
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media(max-width: 1000px)
+{
+    .col p{
+        font-size: 14px;
+    }
+    
 }
