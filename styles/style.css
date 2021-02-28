@@ -190,7 +190,7 @@ nav div.right ul{
         /* display:flex;
         flex-direction: column;
         align-items:flex-start; */
-        margin-left:20px  !important;
+        margin-left:10%  !important;
         
     }
     .col1 img{
@@ -211,4 +211,8 @@ nav div.right ul{
 
 .col1 p{
     margin-bottom: 20px;
+}
+
+.col2 h3{
+    margin-bottom: 5px;
 }
