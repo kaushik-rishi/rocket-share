@@ -133,7 +133,7 @@ nav div.right ul{
 }
 
 .myfooter{
-    height: 250px;
+    height: auto;
     width: 100%;
     background-color: #474747;
     color: azure;
@@ -165,10 +165,50 @@ nav div.right ul{
     font-family: 'Montserrat', sans-serif;
 }
 
-@media(max-width: 1000px)
+/* @media(max-width: 1000px)
 {
     .col p{
         font-size: 14px;
     }
     
+} */
+
+@media(max-width: 800px){
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        font-size: 0.7em;
+    }
+    .col2{
+        text-align:center;
+        width: 100%;
+
+    }
+
+    .col1{
+        /* display:flex;
+        flex-direction: column;
+        align-items:flex-start; */
+        margin-left:20px  !important;
+        
+    }
+    .col1 img{
+        margin-right: 5px;
+    }
+}
+
+.container{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+}
+
+.col1{
+    margin-left: 90px;
+    margin-top: 20px;
+}
+
+.col1 p{
+    margin-bottom: 20px;
 }
