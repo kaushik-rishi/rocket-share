@@ -5,14 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Deploy your websites in less than 60 seconds."
+      content="Share your file in less than 60 seconds."
     />
-    <meta property="og:title" content="Moshify... " />
-    <meta property="og:description" content="Moshify... " />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="http://" />
-    <meta property="og:url" content="https://moshified.com" />
-    <title>Moshify - Go Online for Just $9</title>
+    <title>Rocket 🚀 File Share - Share files quickly</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
@@ -25,15 +20,17 @@
   <body>
     <header>
       <nav class="nav collapsible">
-        <a class="nav__brand" href="/"><img src="images/logo.svg" alt="" /></a>
+        <a class="nav__brand" href="/">
+          <img src="images/logo.svg" alt="" />
+        </a>
         <svg class="icon icon--white nav__toggler">
           <use xlink:href="images/sprite.svg#menu"></use>
         </svg>
         <ul class="list nav__list collapsible__content">
-          <li class="nav__item"><a href="#">Hosting</a></li>
-          <li class="nav__item"><a href="#">VPS</a></li>
-          <li class="nav__item"><a href="#">Domain</a></li>
-          <li class="nav__item"><a href="#">Pricing</a></li>
+          <li class="nav__item"><a href="#">Login</a></li>
+          <li class="nav__item"><a href="#">Sign Up</a></li>
+          <li class="nav__item"><a href="#">Share</a></li>
+          <li class="nav__item"><a href="#">Forum</a></li>
         </ul>
       </nav>
     </header>
@@ -41,12 +38,12 @@
       <div class="container grid grid--1x2">
         <header class="block__header hero__content">
           <h1 data-aos="fade-right" class="block__heading">
-            Cloud Hosting for Pros
+            File sharing for pros
           </h1>
           <p class="hero__tagline">
-            Deploy your websites in less than 60 seconds.
+            Share your files in less than 60 seconds.
           </p>
-          <a href="" class="btn btn--accent btn--stretched">Get Started</a>
+          <a href="" class="btn btn--accent btn--stretched">Share File</a>
         </header>
         <picture data-aos="zoom-in">
           <source
@@ -63,92 +60,92 @@
     </section>
     <section data-aos="fade-up" class="block container block-domain">
       <header class="block__header">
-        <h2>Starting at $9 per month</h2>
+        <h2>Search for a file</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
-          exercitationem?
+          Seamlessly search for a file
         </p>
       </header>
       <div class="input-group">
         <input
           type="text"
           class="input"
-          placeholder="Enter domain name here..."
+          placeholder="Insert the UUID of the file on the server"
         />
         <button class="btn btn--accent">
           <svg class="icon icon--white">
             <use xlink:href="images/sprite.svg#search"></use></svg
-          >Search
+          >Get the file
         </button>
       </div>
-      <ul class="list block-domain__prices">
+      <!-- <ul class="list block-domain__prices">
         <li><span class="badge badge--secondary">.com $9</span></li>
         <li>.sg $10</li>
         <li>.space $11</li>
         <li>.info $14</li>
         <li>.net $10</li>
         <li>.xyz $10</li>
-      </ul>
+      </ul> -->
     </section>
     <section data-aos="fade-up" class="block container block-plans">
       <div class="grid grid--1x3">
         <div class="plan">
           <div class="card card--secondary">
             <header class="card__header">
-              <h3 class="plan__name">Entry</h3>
-              <span class="plan__price">$14</span>
-              <span class="plan__billing-cycle">/month</span>
-              <span class="badge badge--secondary badge--small">10% OFF</span>
-              <span class="plan__description">Easy start on the cloud</span>
+              <span class="plan__price">2MB</span>
+              <span class="plan__billing-cycle">/file</span>
+              <span class="badge badge--secondary badge--small">Limited</span>
+              <span class="plan__description">For Non Registered Users</span>
             </header>
             <div class="card__body">
               <ul class="list list--tick">
-                <li class="list__item">Unlimited Websites</li>
-                <li class="list__item">Unlimited Bandwidth</li>
-                <li class="list__item">100 GB SSD Sotrage</li>
-                <li class="list__item">3 GB RAM</li>
+                <li class="list__item">Basic File Sharing</li>
+                <li class="list__item">Share files upto 2 Megs</li>
+                <li class="list__item">200 mb storage</li>
               </ul>
-              <button class="btn btn--outline btn--block">Buy Now</button>
+              <ul class="list list--cross">
+                <li class="list__item">Participate in discussion forums</li>
+                <li class="list__item">Create private files</li>
+              </ul>
+              <button class="btn btn--outline btn--block">Share Now</button>
             </div>
           </div>
         </div>
         <div class="plan plan--popular">
           <div class="card card--primary">
             <header class="card__header">
-              <h3 class="plan__name">Entry</h3>
-              <span class="plan__price">$14</span>
-              <span class="plan__billing-cycle">/month</span>
-              <span class="badge badge--primary badge--small">10% OFF</span>
-              <span class="plan__description">Easy start on the cloud</span>
+              <span class="plan__price">5MB</span>
+              <span class="plan__billing-cycle">/file</span>
+              <span class="badge badge--primary badge--small">No Restriction</span>
+              <span class="plan__description">Registered Users</span>
             </header>
             <div class="card__body">
               <ul class="list list--tick">
-                <li class="list__item">Unlimited Websites</li>
-                <li class="list__item">Unlimited Bandwidth</li>
-                <li class="list__item">100 GB SSD Sotrage</li>
-                <li class="list__item">3 GB RAM</li>
+                <li class="list__item">Share files with authorisation</li>
+                <li class="list__item">Share files with a size of up to 5MB</li>
+                <li class="list__item">Create private files</li>
+                <li class="list__item">1000 MB Storage</li>
+                <li class="list__item">Participate in discussion forums</li>
               </ul>
-              <button class="btn btn--outline btn--block">Buy Now</button>
+              <button class="btn btn--outline btn--block">Register Now</button>
             </div>
           </div>
         </div>
         <div class="plan">
           <div class="card card--secondary">
             <header class="card__header">
-              <h3 class="plan__name">Entry</h3>
-              <span class="plan__price">$14</span>
-              <span class="plan__billing-cycle">/month</span>
-              <span class="badge badge--secondary badge--small">10% OFF</span>
-              <span class="plan__description">Easy start on the cloud</span>
+              <span class="plan__price">Edit files</span>
+              <span class="plan__description">Edit images, etc with no Adware</span>
             </header>
             <div class="card__body">
               <ul class="list list--tick">
-                <li class="list__item">Unlimited Websites</li>
-                <li class="list__item">Unlimited Bandwidth</li>
-                <li class="list__item">100 GB SSD Sotrage</li>
-                <li class="list__item">3 GB RAM</li>
+                <li class="list__item">Crop Images online</li>
+                <li class="list__item">Convert between file formats</li>
+                <li class="list__item">Image to PDF</li>
+                <li class="list__item">Merge PDF</li>
+                <li class="list__item">Split PDF</li>
+                <li class="list__item">Resize image</li>
               </ul>
-              <button class="btn btn--outline btn--block">Buy Now</button>
+              <button class="btn btn--outline btn--block">Convert Now !</button>
             </div>
           </div>
         </div>

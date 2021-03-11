@@ -159,6 +159,12 @@ a {
   color: var(--color-headings);
 }
 
+.list--cross {
+  list-style-image: url(../images/smallcross.svg);
+  padding-left: 3rem;
+  color: var(--color-headings);
+}
+
 .list--tick .list__item {
   padding-left: 0.5rem;
   margin-bottom: 1rem;
