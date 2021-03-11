@@ -17,8 +17,8 @@
 
 /* Typography */
 ::selection {
-  background: var(--color-primary);
-  color: #fff;
+  background: pink;
+  color: var(--color-body-darker);
 }
 
 html {
