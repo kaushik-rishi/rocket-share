@@ -20,9 +20,14 @@
   <body>
     <header>
       <nav class="nav collapsible">
-        <a class="nav__brand" href="/">
-          <img src="images/logo.svg" alt="" />
-        </a>
+        <!-- <a class="nav__brand" href="/">
+            <img src="./svgs/rocket1.svg">
+            Rocket File Share
+        </a> -->
+        <div class="xx_nav_brand">
+          <img src="./svgs/rocket1.svg" id="xx_brand_logo"> 
+          <span><a href="/" class="normal-link">Rocket Share</a></span>
+        </div>
         <svg class="icon icon--white nav__toggler">
           <use xlink:href="images/sprite.svg#menu"></use>
         </svg>
@@ -34,6 +39,7 @@
         </ul>
       </nav>
     </header>
+    <div class="line"></div>
     <section class="block block--dark block--skewed-left hero">
       <div class="container grid grid--1x2">
         <header class="block__header hero__content">
@@ -153,10 +159,9 @@
     </section>
     <section class="block container">
       <header class="block__header">
-        <h2>Host on the Cloud to Keep Growing</h2>
+        <h2>Play with files on the Go !</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed,
-          voluptatem.
+          Elite file sharing with a smart and minimal User Interface
         </p>
       </header>
       <article class="grid grid--1x2 feature">
@@ -168,9 +173,10 @@
           </span>
           <h3 class="feature__heading">Super Easy to Use</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-            obcaecati vel ad unde est illo at. Labore excepturi officia dolores!
+            We have an attractive UI and a simple approach.
+            So easy, even a caveman could do it.
           </p>
+          <!-- TODO: redirect to about page -->
           <a href="#" class="link-arrow">Learn More</a>
         </div>
         <picture data-aos="zoom-in-left">
@@ -194,8 +200,7 @@
           </span>
           <h3 class="feature__heading">Simply Fast Websites</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-            obcaecati vel ad unde est illo at. Labore excepturi officia dolores!
+            We have kept in mind slow connections and have minimised the dependencies of our application for the user to have a seamless experience.
           </p>
           <a href="#" class="link-arrow">Learn More</a>
         </div>
@@ -211,7 +216,7 @@
           <img class="feature__image" src="images/fast@2x.jpg" alt="" />
         </picture>
       </article>
-      <article class="grid grid--1x2 feature">
+      <!-- <article class="grid grid--1x2 feature">
         <div class="feature__content">
           <span class="icon-container">
             <svg class="icon icon--primary">
@@ -236,7 +241,7 @@
           />
           <img class="feature__image" src="images/wordpress@2x.jpg" alt="" />
         </picture>
-      </article>
+      </article> -->
       <article class="grid grid--1x2 feature">
         <div class="feature__content">
           <span class="icon-container">
@@ -244,10 +249,9 @@
               <use xlink:href="images/sprite.svg#clock"></use>
             </svg>
           </span>
-          <h3 class="feature__heading">24/7 Expert Support</h3>
+          <h3 class="feature__heading">Contact Us</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-            obcaecati vel ad unde est illo at. Labore excepturi officia dolores!
+            You can contact the developers of this site on discord, github, gitter channels
           </p>
           <a href="#" class="link-arrow">Learn More</a>
         </div>

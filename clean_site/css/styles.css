@@ -906,3 +906,33 @@ a {
 .callout-signup {
   transform: translateY(5rem);
 }
+
+
+/* Custom styles */
+.xx_nav_brand {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.xx_nav_brand span {
+  color: var(--color-border);
+  font-weight: 700;
+}
+
+#xx_brand_logo {
+  height: 40px;
+  width: 40px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.line {
+  border-bottom: 0.3px solid rgb(122, 118, 118);
+}
+
+.normal-link {
+  color: white;
+}
