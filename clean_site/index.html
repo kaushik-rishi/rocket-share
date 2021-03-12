@@ -13,17 +13,13 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="index_css/normalize.css" />
+    <link rel="stylesheet" href="index_css/styles.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
     <header>
       <nav class="nav collapsible">
-        <!-- <a class="nav__brand" href="/">
-            <img src="./svgs/rocket1.svg">
-            Rocket File Share
-        </a> -->
         <div class="xx_nav_brand">
           <img src="./svgs/rocket1.svg" id="xx_brand_logo"> 
           <span><a href="/" class="normal-link">Rocket Share</a></span>
@@ -32,10 +28,11 @@
           <use xlink:href="images/sprite.svg#menu"></use>
         </svg>
         <ul class="list nav__list collapsible__content">
-          <li class="nav__item"><a href="#">Login</a></li>
-          <li class="nav__item"><a href="#">Sign Up</a></li>
-          <li class="nav__item"><a href="#">Share</a></li>
-          <li class="nav__item"><a href="#">Forum</a></li>
+          <li class="nav__item active"><a href="#">Home</a></li>
+          <li class="nav__item"><a href="./login">Login</a></li>
+          <li class="nav__item"><a href="./signup">Sign Up</a></li>
+          <li class="nav__item"><a href="./share">Share</a></li>
+          <li class="nav__item"><a href="./forum">Forum</a></li>
         </ul>
       </nav>
     </header>
@@ -64,6 +61,7 @@
         </picture>
       </div>
     </section>
+
     <section data-aos="fade-up" class="block container block-domain">
       <header class="block__header">
         <h2>Search for a file</h2>
@@ -83,14 +81,6 @@
           >Get the file
         </button>
       </div>
-      <!-- <ul class="list block-domain__prices">
-        <li><span class="badge badge--secondary">.com $9</span></li>
-        <li>.sg $10</li>
-        <li>.space $11</li>
-        <li>.info $14</li>
-        <li>.net $10</li>
-        <li>.xyz $10</li>
-      </ul> -->
     </section>
     <section data-aos="fade-up" class="block container block-plans">
       <div class="grid grid--1x3">
