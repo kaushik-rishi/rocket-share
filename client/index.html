@@ -14,24 +14,9 @@
 </head>
 
 <body>
-  <header>
-    <nav class="nav collapsible">
-      <div class="xx_nav_brand">
-        <img src="./svgs/rocket1.svg" id="xx_brand_logo">
-        <span><a href="/" class="normal-link">Rocket Share</a></span>
-      </div>
-      <svg class="icon icon--white nav__toggler">
-        <use xlink:href="images/sprite.svg#menu"></use>
-      </svg>
-      <ul class="list nav__list collapsible__content">
-        <li class="nav__item active"><a href="#">Home</a></li>
-        <li class="nav__item"><a href="./registrationpages/login.html">Login</a></li>
-        <li class="nav__item"><a href="./registrationpages/signup.html">Sign Up</a></li>
-        <li class="nav__item"><a href="./share">Share</a></li>
-        <li class="nav__item"><a href="./forum">Forum</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div id="header-loader">
+
+  </div>
   <div class="line"></div>
   <section class="block block--dark block--skewed-left hero">
     <div class="container grid grid--1x2">
@@ -153,7 +138,7 @@
           We have an attractive UI and a simple approach.
           So easy, even a caveman could do it.
         </p>
-        <!-- TODO: redirect to about page -->
+        <!-- TODO : redirect to about page -->
         <a href="#" class="link-arrow">Learn More</a>
       </div>
       <picture data-aos="zoom-in-left">
@@ -182,32 +167,6 @@
         <img class="feature__image" src="images/fast@2x.jpg" alt="" />
       </picture>
     </article>
-    <!-- <article class="grid grid--1x2 feature">
-        <div class="feature__content">
-          <span class="icon-container">
-            <svg class="icon icon--primary">
-              <use xlink:href="images/sprite.svg#wordpress"></use>
-            </svg>
-          </span>
-          <h3 class="feature__heading">Wordpress Made Easy</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-            obcaecati vel ad unde est illo at. Labore excepturi officia dolores!
-          </p>
-          <a href="#" class="link-arrow">Learn More</a>
-        </div>
-        <picture>
-          <source
-            type="image/webp"
-            srcset="images/wordpress.webp 1x, images/wordpress@2x.webp 2x"
-          />
-          <source
-            type="image/jpg"
-            srcset="images/wordpress.jpg 1x, images/wordpress@2x.jpg 2x"
-          />
-          <img class="feature__image" src="images/wordpress@2x.jpg" alt="" />
-        </picture>
-      </article> -->
     <article class="grid grid--1x2 feature">
       <div class="feature__content">
         <span class="icon-container">
@@ -243,9 +202,6 @@
           <div class="media">
             <div class="media__image">
               <img src="images/gallery.svg" class="icon icon--primary">
-              <!-- <svg class="icon icon--primary">
-                  <use xlink:href="images/sprite.svg#snap"></use>
-                </svg> -->
             </div>
             <div class="media__body">
               <h3 class="media__title">Elite Gallery</h3>
@@ -258,9 +214,6 @@
         <li>
           <div class="media">
             <div class="media__image">
-              <!-- <svg class="icon icon--primary">
-                  <use xlink:href="images/sprite.svg#easy"></use>
-                </svg> -->
               <img src="images/cloudsvg.svg" class="icon icon--primary">
             </div>
             <div class="media__body">
@@ -289,51 +242,6 @@
       </ul>
     </div>
   </section>
-  <!-- <section class="block" data-aos="zoom-in">
-      <header class="block__header">
-        <h2>What our Customers are Saying</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, ipsam.
-        </p>
-      </header>
-      <div class="container">
-        <div class="card testimonial">
-          <div class="grid grid--1x2">
-            <div class="testimonial__image">
-              <img
-                src="images/testimonial.jpg"
-                alt="A happy, smiling customer"
-              />
-              <span class="icon-container icon-container--accent">
-                <svg class="icon icon--white icon--small">
-                  <use xlink:href="images/sprite.svg#quotes"></use>
-                </svg>
-              </span>
-            </div>
-            <blockquote class="quote">
-              <p class="quote__text">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Incidunt optio officiis dolore earum error eaque perferendis
-                laudantium sed praesentium dolorum.
-              </p>
-              <footer>
-                <div class="media">
-                  <div class="media__image">
-                    <svg class="icon icon--primary quote__line">
-                      <use xlink:href="images/sprite.svg#line"></use>
-                    </svg>
-                  </div>
-                  <div class="media__body">
-                    <h3 class="media__title quote__author">John Smith</h3>
-                    <p class="quote__organization">ABC Company</p>
-                  </div>
-                </div>
-              </footer>
-            </blockquote>
-          </div>
-        </div>
-      </div>
-    </section> -->
   <div class="container">
     <div class="callout callout--primary callout-signup">
       <div class="grid grid--1x2">
@@ -348,78 +256,14 @@
     </div>
   </div>
 
-  <footer class="block block--dark footer">
-    <div class="container grid footer__sections">
-      <section class="collapsible collapsible--expanded footer__section">
-        <div class="collapsible__header">
-          <h2 class="collapsible__heading footer__heading">Pages</h2>
-          <svg class="icon icon--white collapsible__chevron">
-            <use xlink:href="images/sprite.svg#chevron"></use>
-          </svg>
-        </div>
-        <div class="collapsible__content">
-          <ul class="list">
-            <li><a href="#">Share</a></li>
-            <li><a href="#">Edit files</a></li>
-            <li><a href="#">Discussion Forums</a></li>
-          </ul>
-        </div>
-      </section>
-      <section class="collapsible footer__section">
-        <div class="collapsible__header">
-          <h2 class="collapsible__heading footer__heading">Company</h2>
-          <svg class="icon icon--white collapsible__chevron">
-            <use xlink:href="images/sprite.svg#chevron"></use>
-          </svg>
-        </div>
-        <div class="collapsible__content">
-          <ul class="list">
-            <li><a href="#">About</a></li>
-            <li><a href="#">Affiliates</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
-        </div>
-      </section>
-      <section class="collapsible footer__section">
-        <div class="collapsible__header">
-          <h2 class="collapsible__heading footer__heading">Support</h2>
-          <svg class="icon icon--white collapsible__chevron">
-            <use xlink:href="images/sprite.svg#chevron"></use>
-          </svg>
-        </div>
-        <div class="collapsible__content">
-          <ul class="list">
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Knowledge Base</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
-        </div>
-      </section>
-      <!-- <section class="collapsible footer__section">
-          <div class="collapsible__header">
-            <h2 class="collapsible__heading footer__heading">Domains</h2>
-            <svg class="icon icon--white collapsible__chevron">
-              <use xlink:href="images/sprite.svg#chevron"></use>
-            </svg>
-          </div>
-          <div class="collapsible__content">
-            <ul class="list">
-              <li><a href="#">Domain Checker</a></li>
-              <li><a href="#">Domain Transfer</a></li>
-              <li><a href="#">Free Domain</a></li>
-            </ul>
-          </div>
-        </section> -->
-      <div class="footer__brand">
-        <div class="xx_nav_brand">
-          <img src="./svgs/rocket1.svg" id="xx_brand_logo">
-          <span><a href="/">Rocket Share</a></span>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <div id="footer-loader">
+  </div>
   <script src="js/main.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"></script>
+  <script src="./js/loadNavAndFooter.js"></script>
   <script>
     AOS.init();
   </script>
