@@ -44,15 +44,15 @@
                 <h3>Login</h3>
                 <p class="mb-4">Login to access your account</p>
               </div>
-              <form action="#">
+              <form action="/login" method="POST">
                 <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" class="form-control" id="email">
+                  <label for="username">Username</label>
+                  <input class="form-control" id="username" name="username">
                 </div>
 
                 <div class="form-group">
                   <label for="password">Password</label>
-                  <input type="password" class="form-control" id="password">
+                  <input type="password" class="form-control" id="password" name="password">
                 </div>
 
                 <div class="d-flex mb-5 align-items-center">
