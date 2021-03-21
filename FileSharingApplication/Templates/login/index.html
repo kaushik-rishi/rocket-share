@@ -44,7 +44,7 @@
       </svg>
       <ul class="list nav__list collapsible__content">
         <li class="nav__item"><a href="../">Home</a></li>
-        <li class="nav__item active"><a href="./Accounts/Login">Login</a></li>
+        <li class="nav__item active"><a href="./Login">Login</a></li>
         <li class="nav__item"><a href="./Signup">Sign Up</a></li>
         <li class="nav__item"><a href="../Share">Share</a></li>
         <li class="nav__item"><a href="../Forums">Forum</a></li>
@@ -66,15 +66,16 @@
                 <h3>Login</h3>
                 <p class="mb-4">Login to access your account</p>
               </div>
-              <form action="#">
+              <form action="Login" method = "post">
+                {% csrf_token %}
                 <div class="form-group">
                   <label for="email">Email</label>
-                  <input type="email" class="form-control" id="email">
+                  <input type="email" class="form-control" id="email" name="Email">
                 </div>
 
                 <div class="form-group">
                   <label for="password">Password</label>
-                  <input type="password" class="form-control" id="password">
+                  <input type="password" class="form-control" id="password" name="password">
                 </div>
 
                 <div class="d-flex mb-5 align-items-center">
@@ -83,7 +84,6 @@
                     <div class="control__indicator"></div>
                   </label>
                 </div>
-
                 <input type="submit" value="Login" class="btn btn-block btn-primary">
 
                 <span class="d-block text-left my-4 text-muted">&mdash; or login with &mdash;</span>

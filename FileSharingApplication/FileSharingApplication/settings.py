@@ -126,3 +126,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'Assets')
 ]
+
+AUTHENTICATION_BACKENDS = (
+        'django.contrib.auth.backends.ModelBackend',
+    )
