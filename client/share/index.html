@@ -9,10 +9,30 @@
 
   <link rel="stylesheet" href="/index_css/normalize.css">
   <link rel="stylesheet" href="/index_css/styles.css">
+
+  <style>
+    #main-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 80px;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
   <div id="header-loader"></div>
+
+  <div class="container" id="main-container">
+    <h2 class="blockheading aos-init aos-animate">Share a File</h2>
+    <p class="herotagline">
+      Share your work and ideas through instantly shareable links.
+    </p>
+    <label class="btn btn--accent btn--stretched" for="myfile">Upload</label>
+    <input type="file" id="myfile" name="myfile" hidden>
+  </div>
 
   <div id="footer-loader"></div>
 

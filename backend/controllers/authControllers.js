@@ -19,9 +19,13 @@ async function loginUser(req, res, next) {
     try {
         // fetch the user from the database
         let userDb = await User.findOne({
-            email: user.email
+            where: {
+                email: user.email
+            }
         })
 
+        console.log(userDb)
+        
         // if the user does not exist => return an error response
         if (!userDb) {
             return res.status(400).json({
@@ -52,7 +56,9 @@ async function loginUser(req, res, next) {
         // TODO : change this to localStorage (or) Auth bearer token
         res.cookie('authtoken', token)
 
-        return res.redirect('/share')
+        return res.status(200).json({
+            ok: true
+        })
     } catch (err) {
         return res.status(400).json({
             ok: false,

@@ -99,8 +99,6 @@ function validateUser(user, soft=false) {
                 .required(),
         password: Joi
                 .string()
-                .min(5)
-                .max(30)
                 .required()
     })
 
