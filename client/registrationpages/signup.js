@@ -3,14 +3,14 @@ const errorEl = document.querySelector('span#signup_form__error')
 
 signupForm.addEventListener('submit', function (e) {
     e.preventDefault()
-
+    
     let user = {
         name: signupForm?.name?.value,
         email: signupForm?.email?.value,
         password: signupForm?.password?.value
     }
-
-    fetch('/login', {
+    
+    fetch('/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -19,6 +19,7 @@ signupForm.addEventListener('submit', function (e) {
     })
         .then(response => response.json())
         .then(json => {
+            console.log(json)
             if (json.ok === true) {
                 window.location = '/share'
             } else {

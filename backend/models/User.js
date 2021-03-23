@@ -41,13 +41,13 @@ User.beforeSave(async function(user, options) {
 function validationErrorHandler(err) {
     let errMessage = ''
 
-    console.log(err?.errors[0]?.message)
-    console.log(err?.errors[0]?.path)
+    // console.log(err?.errors[0]?.message)
+    // console.log(err?.errors[0]?.path)
     
     if (err?.errors[0]?.message) 
         if (err.message === 'Validation error')
             if (err?.errors[0]?.path === 'Users.users_email')
-                errMessage = 'Email ID must be unique'
+                errMessage = 'This email ID is aldready registered, consider logging in'
             else if (err?.errors[0]?.path === 'Users.username')
                 errMessage = 'Username must be unique'
     else

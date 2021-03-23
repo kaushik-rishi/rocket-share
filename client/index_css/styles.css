@@ -939,4 +939,6 @@ a {
 
 .active {
   color: white;
+  font-weight: bolder;
+  font-size: 110%;
 }
