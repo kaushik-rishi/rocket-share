@@ -84,6 +84,11 @@
                     <div class="control__indicator"></div>
                   </label>
                 </div>
+                <div>
+                  {% for message in messages%}
+                    <div id="xxx_loginerror_xxx">{{message}}</div>
+                  {% endfor %}
+                </div>
                 <input type="submit" value="Login" class="btn btn-block btn-primary">
 
                 <span class="d-block text-left my-4 text-muted">&mdash; or login with &mdash;</span>

@@ -15,7 +15,6 @@ def login(request):
             auth.login(request,user)
             return redirect("/Accounts/afterlogin")
         else:
-            print("not found")
             messages.info(request,"invalid credentials")
             return redirect('/Accounts/Login')
     else:
@@ -24,7 +23,27 @@ def login(request):
         return render(request,'login/index.html')
 
 def signup(request):
-    return render(request,'signup/index.html')
+    if request.method == "POST":
+        username = request.POST['username']
+        email = request.POST['email']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+        if User.objects.filter(username=username).exists():
+            messages.info(request,"Username taken")
+            return redirect('/Accounts/Signup')
+        if User.objects.filter(email=email).exists():
+            messages.info(request,"User already has an account")
+            return redirect('/Accounts/Signup')
+        if password1!=password2:
+            messages.info(request,"Password does not match")
+            return redirect('/Accounts/Signup')
+        user = User.objects.create_user(username = username, email= email, password= password1)
+        user.save()
+        return redirect('/Accounts/aftersignup')
+    else:
+        if request.user.is_authenticated:
+            return redirect("/Accounts/afterlogin")
+        return render(request,'signup/index.html')
 
 def afterlogin(request):
     return render(request,'login/afterlogin.html')
@@ -32,3 +51,6 @@ def afterlogin(request):
 def logout(request):
     auth.logout(request)
     return redirect('/Accounts/Login')
+
+def aftersignup(request):
+    return render(request,'signup/aftersignup.html')

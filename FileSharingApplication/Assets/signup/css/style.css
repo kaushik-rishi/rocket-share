@@ -204,3 +204,11 @@ h2 {
 #xx__brandname__xx:hover {
     color: white !important;
 }
+
+
+#xxx_loginerror_xxx{
+  color: red;
+  font-size: medium;
+  font-weight: 100;
+  font-family: 'Times New Roman', Times, serif;
+}
