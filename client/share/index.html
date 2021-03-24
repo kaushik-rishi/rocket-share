@@ -18,6 +18,9 @@
 
       padding: 80px;
       text-align: center;
+
+      /* to align the main container with the navbar and the footer in place */
+      height: 53vh;
     }
   </style>
 </head>
@@ -30,8 +33,11 @@
     <p class="herotagline">
       Share your work and ideas through instantly shareable links.
     </p>
-    <label class="btn btn--accent btn--stretched" for="myfile">Upload</label>
-    <input type="file" id="myfile" name="myfile" hidden>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <label class="btn btn--accent btn--stretched" for="fileupload">Upload</label>
+      <input type="file" id="fileupload" name="fileupload" hidden>
+    </form>
   </div>
 
   <div id="footer-loader"></div>

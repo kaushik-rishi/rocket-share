@@ -23,6 +23,7 @@ app.use('/', express.static(path.join(__dirname, '..', 'client')))
 
 // mounting the routes
 app.use('/', require('./routes/authRoutes')) // authorization routes
+app.use('/', require('./routes/uploadRoutes')) // file upload routes
 
 const PORT = 8080
 
