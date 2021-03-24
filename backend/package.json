@@ -17,7 +17,10 @@
     "validator": "^10.11.0"
   },
   "scripts": {
-    "dev": "nodemon backend/server"
+    "start": "node server",
+    "dev": "nodemon server",
+    "cleanstart": "rm -rf node_modules && npm install && node server",
+    "cleanbucketstart": "rm -rf bucket && node server"
   },
   "keywords": [],
   "author": "",
