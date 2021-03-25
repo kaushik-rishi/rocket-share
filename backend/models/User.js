@@ -40,6 +40,7 @@ User.beforeSave(async function(user, options) {
 // Sequelize validationErrorHandler
 function validationErrorHandler(err) {
     let errMessage = ''
+    console.log(err)
 
     // console.log(err?.errors[0]?.message)
     // console.log(err?.errors[0]?.path)
@@ -53,7 +54,6 @@ function validationErrorHandler(err) {
     else
         errMessage = 'Database Runtime Error'
 
-    // return new Error(errMessage)
     return errMessage
 }
 
