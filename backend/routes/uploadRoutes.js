@@ -1,21 +1,28 @@
 const router = require('express').Router()
-const { uploadMiddlware } = require('../middleware/uploadMulterMiddleware')
+const { uploadMiddleware } = require('../middleware/uploadMulterMiddleware')
 
-router.post('/upload', uploadMiddlware.single('fileupload'), (req, res, err) => {
+const singleUpload = uploadMiddleware.single('fileupload')
+
+router.post('/upload', (req, res, err) => {
     const file = req.file
-    
-    if (err || !file) {
-        let errorMessage = err?.message || 'Exception occured while uploading the file'
-        res.status(500).json({
+
+    if (!file) 
+        return res.status(400).send({
             ok: false,
-            err: errorMessage
+            err: 'Something went wrong while uplaoding the file...'
         })
-    } else {
-        res.status(200).json({
-            ok: true,
-            msg: `You're file ${file.originalname} was succesfully uploaded to the server`
-        })
-    }
+    
+
+    singleUpload(req, res, (err) => {
+        if (err) {
+            return res.status(500).send({
+                ok: false,
+                err: err.message
+            })
+        }
+
+        
+    })
 })
 
 module.exports = router
