@@ -95,7 +95,10 @@ async function registerUser(req, res, next) {
         res.cookie('authtoken', token)
 
         // redirect the user to the share page
-        return res.redirect('/share')
+        return res.status(201).json({
+            ok: true,
+            msg: 'Successfully registered user'
+        })
     } catch (err) {
         // if user creation fails then there must be a validation error
         return res.status(400).json({
