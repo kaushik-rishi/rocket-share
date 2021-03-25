@@ -1,4 +1,4 @@
-// importing node modules
+// importing node_modules
 const express = require('express')
 const path = require('path')
 const cookieParser = require('cookie-parser')
@@ -25,12 +25,12 @@ app.use('/', express.static(path.join(__dirname, '..', 'client')))
 app.use('/', require('./routes/authRoutes')) // authorization routes
 app.use('/', require('./routes/uploadRoutes')) // file upload routes
 
-const PORT = 8080
+const PORT = process.env.PORT || 8080
 
 // synchronize the database and then start the express server
 db.sync({alter: true})
     .then(() => {
         app.listen(PORT, () => {
-            console.log(`🌝 Server running on port ${PORT}`.yellow.bold)
+            console.log(`🌝 Server running on port ${PORT} => http://localhost:8080`.yellow.bold)
         });
     })
