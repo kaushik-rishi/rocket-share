@@ -5,15 +5,21 @@ const path = require('path')
 const storageEngine = multer.diskStorage({
     // bucket folder along with the client and the backend
     destination: path.join(__dirname, '..', 'bucket'),
+
     filename: function (req, file, callback) {
+        const uniqueName = Date.now() + Math.round(Math.random() * 1E9) + path.extname(file.originalname)
+
         // err, file_name
-        callback(null, Date.now() + path.extname(file.originalname))
+        callback(null, uniqueName)
     }
 })
 
 // initialise the upload variable
-const uploadMiddlware = multer({
-    storage: storageEngine
+const uploadMiddleware = multer({
+    storage: storageEngine,
+    limits: {
+        fileSize: 1000000 * 100
+    }
 })
 
 /*
@@ -27,5 +33,5 @@ Way 2 [Refer BT] - get the single upload function `upload = uploadMiddleware.sin
 */
 
 module.exports = {
-    uploadMiddlware,
+    uploadMiddleware,
 }
