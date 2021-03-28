@@ -1,10 +1,4 @@
-// create a database object and returning it
-
 const { Sequelize } = require('sequelize')
-
-// require('dotenv').config({
-//     path: '/home/darkangel/WAD-Group-15/backend/.env'
-// })
 
 const {
     DB_USER, DB_NAME, DB_PASS, DB_HOST, DB_PORT
