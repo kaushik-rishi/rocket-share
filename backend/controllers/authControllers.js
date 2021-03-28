@@ -81,8 +81,6 @@ async function registerUser(req, res, next) {
 
     // create new user
     try {
-        user = await User.create(user)
-
         // payload to insert in the token
         let payload = {
             name: user.name
@@ -94,12 +92,16 @@ async function registerUser(req, res, next) {
         // set the cookie
         res.cookie('authtoken', token)
 
+        await User.create(user)
+
         // redirect the user to the share page
         return res.status(201).json({
             ok: true,
             msg: 'Successfully registered user'
         })
     } catch (err) {
+        console.log(err.message)
+        
         // if user creation fails then there must be a validation error
         return res.status(400).json({
             ok: false,

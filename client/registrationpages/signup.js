@@ -16,8 +16,9 @@ function getPayload(token) {
     return JSON.parse(atob(base64));
 }
 
-signupForm.addEventListener('submit', function (e) {
+signupForm.addEventListener('submit', async function (e) {
     e.preventDefault()
+    console.log('submit')
     
     let user = {
         name: signupForm?.name?.value,
@@ -25,25 +26,30 @@ signupForm.addEventListener('submit', function (e) {
         password: signupForm?.password?.value
     }
     
-    fetch('/register', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify(user)
-    })
-        .then(response => response.json())
-        .then(json => {
-            console.log(json)
+    // let reponse = await fetch('/register', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //         'Accept': 'application/json'
+    //     },
+    //     body: JSON.stringify(user)
+    // })
 
-            if (json.ok === true) {
-                errorEl.innerText = ''
-                alert(`Welcome ${getPayload(getAuthToken()).name} Please consider logging in 😁`)
-                window.location = '/registrationpages/login.html'
-            } else {
-                errorEl.innerText = json.err
-            }
-        })
+    console.log(reponse)
+    //     .then(response => {
+    //         console.log(response)
+    //         return response.json()
+    //     })
+    //     .then(json => {
+    //         console.log(json)
+
+    //         if (json.ok === true) {
+    //             errorEl.innerText = ''
+    //             alert(`Welcome ${getPayload(getAuthToken()).name} Please consider logging in 😁`)
+    //             window.location = '/registrationpages/login.html'
+    //         } else {
+    //             errorEl.innerText = json.err
+    //         }
+    //     })
 })
 
