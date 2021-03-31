@@ -1,0 +1,19 @@
+// file object in the filename function in the uploadMiddleware
+{
+  "fieldname": "fileupload",
+  "originalname": "dp.png",
+  "encoding": "7bit",
+  "mimetype": "image/png"
+}
+
+// req.file object in the final route handler after middleware
+{
+  "fieldname": "fileupload",
+  "originalname": "dp.png",
+  "encoding": "7bit",
+  "mimetype": "image/png",
+  "destination": "/home/darkangel/WAD-Group-15/backend/bucket/aXLaoUlX",
+  "filename": "dp.png",
+  "path": "/home/darkangel/WAD-Group-15/backend/bucket/aXLaoUlX/dp.png",
+  "size": 41113
+}

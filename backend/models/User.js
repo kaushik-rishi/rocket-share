@@ -73,9 +73,9 @@ async function test() {
 
 // test()
 
-// Joi user validation
+// Handles the validation of the user object for both signup and login using a soft parameter
 function validateUser(user, soft=false) {
-    let valSchema = Joi.object({
+    let joiSchema = Joi.object({
         name: Joi
                 .string()
                 .min(5)
@@ -92,7 +92,7 @@ function validateUser(user, soft=false) {
                 .required()
     })
 
-    let valSchemaSoft = Joi.object({
+    let joiSchemaSoft = Joi.object({
         email: Joi
                 .string()
                 .email({ tlds: { allow: false } })
@@ -103,12 +103,12 @@ function validateUser(user, soft=false) {
     })
 
     
-    // let {error} = valSchema.validate(user)
+    // let {error} = joiSchema.validate(user)
     // return error?.details[0]?.message
 
     if (soft === true) 
-        return valSchemaSoft.validate(user)
-    return valSchema.validate(user)
+        return joiSchemaSoft.validate(user)
+    return joiSchema.validate(user)
 }
 
 // console.log(validateUser({
