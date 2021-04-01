@@ -1,3 +1,8 @@
+/*
+- use the defaultValue option to get the nanoid() if not already present
+defaultValue: nanoid();
+*/
+
 require('dotenv').config();
 
 const db = require('./config/db');

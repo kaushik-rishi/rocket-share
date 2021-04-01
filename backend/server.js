@@ -1,36 +1,31 @@
-// importing node_modules
-const express = require('express')
-const path = require('path')
-const cookieParser = require('cookie-parser')
-require('colors')
-require('dotenv').config()
+require('dotenv').config();
 
-// importing files as modules
-const db = require('./config/db')
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+require('colors');
 
-// creating an express app
-const app = express()
+const db = require('./config/db');
+// Make the relations when the server starts. [Ensure that the relations are already made]
+require('./models/Relations.js'); 
 
-// parsing the request body
-app.use(express.json())
-app.use(express.urlencoded({extended: true}))
+const app = express();
 
-// parsing the cookies
-app.use(cookieParser())
+app.use(cookieParser());
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 // serving the client folder on the root path
-app.use('/', express.static(path.join(__dirname, '..', 'client')))
+app.use('/', express.static(path.join(__dirname, '..', 'client')));
 
-// mounting the routes
-app.use('/', require('./routes/authRoutes')) // authorization routes
-app.use('/', require('./routes/uploadRoutes')) // file upload routes
+app.use('/', require('./routes/authRoutes')); // authorization routes
+app.use('/', require('./routes/uploadRoutes')); // file upload routes
 
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 8080;
 
-// synchronize the database and then start the express server
-db.sync({alter: true})
+db.sync({force: true})
     .then(() => {
         app.listen(PORT, () => {
-            console.log(`🌝 Server running on port ${PORT} => http://localhost:8080`.yellow.bold)
+            console.log(`🌝 Server running on port ${PORT} => http://localhost:8080`.yellow.bold);
         });
-    })
+    });

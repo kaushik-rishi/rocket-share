@@ -1,7 +1,7 @@
-const db = require('../config/db')
-const { DataTypes } = require('sequelize')
-const Joi = require('joi')
-const bcyrpt = require('bcrypt')
+const db = require('../config/db');
+const { DataTypes } = require('sequelize');
+const Joi = require('joi');
+const bcyrpt = require('bcrypt');
 
 // user schema
 const UserSchema = {
@@ -20,7 +20,7 @@ const UserSchema = {
         type: DataTypes.STRING,
         allowNull: false
     }
-}
+};
 
 // user model
 const User = db.define('User', UserSchema, {
@@ -30,12 +30,12 @@ const User = db.define('User', UserSchema, {
             fields: ['email']
         }
     ]
-})
+});
 
 // hash the password before saving the user object to the database
 User.beforeSave(async function(user, options) {
-    user.password = await bcyrpt.hash(user.password, 10)
-})
+    user.password = await bcyrpt.hash(user.password, 10);
+});
 
 // Sequelize validationErrorHandler
 function validationErrorHandler(err) {
@@ -90,7 +90,7 @@ function validateUser(user, soft=false) {
                 .min(5)
                 .max(30)
                 .required()
-    })
+    });
 
     let joiSchemaSoft = Joi.object({
         email: Joi
@@ -100,15 +100,16 @@ function validateUser(user, soft=false) {
         password: Joi
                 .string()
                 .required()
-    })
+    });
 
     
     // let {error} = joiSchema.validate(user)
     // return error?.details[0]?.message
 
     if (soft === true) 
-        return joiSchemaSoft.validate(user)
-    return joiSchema.validate(user)
+        return joiSchemaSoft.validate(user);
+
+    return joiSchema.validate(user);
 }
 
 // console.log(validateUser({
@@ -121,4 +122,4 @@ module.exports = {
     User,
     validateUser,
     validationErrorHandler
-}
+};
