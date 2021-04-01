@@ -20,10 +20,11 @@ app.use('/', express.static(path.join(__dirname, '..', 'client')));
 
 app.use('/', require('./routes/authRoutes')); // authorization routes
 app.use('/', require('./routes/uploadRoutes')); // file upload routes
+app.use('/', require('./routes/filehandlingRoutes')); // file viewing routes
 
 const PORT = process.env.PORT || 8080;
 
-db.sync({force: true})
+db.sync({alter: true})
     .then(() => {
         app.listen(PORT, () => {
             console.log(`🌝 Server running on port ${PORT} => http://localhost:8080`.yellow.bold);

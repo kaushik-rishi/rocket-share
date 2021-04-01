@@ -29,7 +29,8 @@ const User = db.define('User', UserSchema, {
             unique: true,
             fields: ['email']
         }
-    ]
+    ],
+    timestamps: false
 });
 
 // hash the password before saving the user object to the database

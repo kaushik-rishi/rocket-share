@@ -4,7 +4,7 @@ const { uploadMiddleware } = require('../middleware/uploadMulterMiddleware');
 const {
     Upload,
     validateUpload
-} = require('../models/Upload.js');
+} = require('../models/Upload');
 
 const singleUpload = uploadMiddleware.single('fileupload');
 
@@ -35,13 +35,14 @@ router.post('/upload', (req, res) => {
 
             // save the upload metadata to the server
             let uploadObject = {
-                id: file.filename,
+                id: folderId,
                 folderid: folderId,
                 originalname: file.originalname,
                 encoding: file.encoding,
                 mimetype: file.mimetype,
                 filename: file.filename,
-                size: file.size
+                size: file.size,
+                UserId: 1
             };
 
             const { error, value } = validateUpload(uploadObject);

@@ -5,8 +5,11 @@ const { DataTypes } = require('sequelize');
 const Joi = require('joi');
 
 const UploadSchema = {
-	// original name and filename are same in this case
-    id: {
+	// Obsolete
+	// original name and filename are the same
+	// id and folderid are the same 
+
+    id: { // this will be the master folder id
     	type: DataTypes.STRING,
     	primaryKey: true
     },
@@ -36,7 +39,9 @@ const UploadSchema = {
 	}
 };
 
-const Upload = db.define('Upload', UploadSchema);
+const Upload = db.define('Upload', UploadSchema, {
+	timestamps: false
+});
 
 function validateUpload(upload) {
 	const joiSchema = Joi.object({
@@ -62,7 +67,10 @@ function validateUpload(upload) {
 		size: Joi
 				.number()
 				.integer()
-				.required()
+				.required(),
+		// foriegn keys
+		UserId: Joi
+				.number()
 	});
 
 	return joiSchema.validate(upload);
