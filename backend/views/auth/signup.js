@@ -16,24 +16,24 @@ function getPayload(token) {
     return JSON.parse(atob(base64));
 }
 
-signupForm.addEventListener('submit', async function (e) {
+signupForm.addEventListener('submit', async function(e) {
     e.preventDefault()
     console.log('submit')
-    
+
     let user = {
-        name: signupForm?.name?.value,
-        email: signupForm?.email?.value,
-        password: signupForm?.password?.value
+        name: signupForm ? .name ? .value,
+        email: signupForm ? .email ? .value,
+        password: signupForm ? .password ? .value
     }
-    
+
     fetch('/register', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify(user)
-    })
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
         .then(response => {
             console.log(response)
             return response.json()
@@ -44,10 +44,9 @@ signupForm.addEventListener('submit', async function (e) {
             if (json.ok === true) {
                 errorEl.innerText = ''
                 alert(`Welcome ${getPayload(getAuthToken()).name} Please consider logging in 😁`)
-                window.location = '/registrationpages/login.html'
+                window.location = 'login'
             } else {
                 errorEl.innerText = json.err
             }
         })
 })
-
