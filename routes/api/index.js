@@ -1,7 +1,8 @@
 const router = require('express').Router();
 
-router.use('/auth', require('./authRoutes'));
-router.use('/upload', require('./uploadRoutes'));
-router.use('/send', require('./sendMailRoutes'));
+router
+	.use('/auth', require('./authRoutes'))
+	.use('/upload', require('./uploadRoutes'))
+	.use('/mail', require('./sendMailRoutes'));
 
 module.exports = router;

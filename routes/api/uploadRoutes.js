@@ -4,6 +4,7 @@ const {
 } = require('../../controllers/uploadControllers');
 
 // POST /api/upload - to upload a new file
-router.post('/', uploadPost);
+router
+	.post('/', uploadPost);
 
 module.exports = router;
