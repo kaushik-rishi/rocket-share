@@ -11,7 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
-
     <link rel="stylesheet" href="/auth/fonts/icomoon/style.css">
 
     <link rel="stylesheet" href="/auth/css/owl.carousel.min.css">
@@ -21,63 +20,55 @@
 
     <!-- Style -->
     <link rel="stylesheet" href="/auth/css/style.css">
+
     <title>Sign Up #7</title>
 </head>
 
 <body>
 
-    <div id="header-loader"></div>
+    <div id="header-loader">
+    </div>
+
     <div class="line"></div>
 
     <div class="content">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="/images/bg-img.jpg" alt="Image" class="img-fluid">
+                    <img src="/images/Mobile-login.jpg" alt="Image" class="img-fluid">
                 </div>
                 <div class="col-md-6 contents">
                     <div class="row justify-content-center">
                         <div class="col-md-8">
                             <div class="mb-4">
-                                <h3>Sign Up</h3>
-                                <p class="mb-4">Register and enjoy the perks provided by Rocket Share &copy;</p>
+                                <h3>Login</h3>
+                                <p class="mb-4">Login to access your account</p>
                             </div>
 
-                            <form id="signup_form">
-                                <span id="signup_form__error" style="color: red; font-size: smaller;"></span>
-                                <div class="form-group first">
-                                    <label for="name">Full name</label>
-                                    <input type="text" class="form-control" id="name" name="name">
+                            <!-- <form action="/login" method="POST"> -->
+                            <form id="login_form">
+                                <span id="login_form__error" style="color: red; font-size: smaller;"></span>
 
-                                </div>
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="email" class="form-control" id="email" name="email">
-
+                                    <input class="form-control" id="email" type="email" name="email">
                                 </div>
+
                                 <div class="form-group">
                                     <label for="password">Password</label>
                                     <input type="password" class="form-control" id="password" name="password">
                                 </div>
 
-                                <!-- Password confirmation -->
-                                <!-- <div class="form-group last mb-4">
-                  <label for="re-password">Re-type Password</label>
-                  <input type="password" class="form-control" id="re-password">
-
-                </div> -->
-
                                 <div class="d-flex mb-5 align-items-center">
-                                    <label class="control control--checkbox mb-0"><span class="caption">Creating an account means you're
-                      okay with our <a href="#">Terms and Conditions</a> and our <a href="#">Privacy Policy</a>.</span>
+                                    <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
                     <input type="checkbox" checked="checked" />
                     <div class="control__indicator"></div>
                   </label>
                                 </div>
 
-                                <input type="submit" value="Register" class="btn btn-block btn-primary">
+                                <input type="submit" value="Login" class="btn btn-block btn-primary">
 
-                                <span class="d-block text-left my-4 text-muted">&mdash; or register with &mdash;</span>
+                                <span class="d-block text-left my-4 text-muted">&mdash; or login with &mdash;</span>
 
                                 <div class="social-login">
                                     <a href="#" class="facebook">
@@ -110,11 +101,12 @@
         AOS.init();
     </script>
 
+
     <!-- not the root javascript -->
     <script src="/auth/js/popper.min.js"></script>
     <script src="/auth/js/bootstrap.min.js"></script>
     <script src="/auth/js/main.js"></script>
-    <script src="/auth/jsgin.js"></script>
+    <script src="/auth/login.js"></script>
 
 </body>
 

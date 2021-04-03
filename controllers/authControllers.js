@@ -25,7 +25,7 @@ async function loginUser(req, res, next) {
         })
 
         console.log(userDb)
-        
+
         // if the user does not exist => return an error response
         if (!userDb) {
             return res.status(400).json({
@@ -33,7 +33,7 @@ async function loginUser(req, res, next) {
                 err: 'Email ID is not registered, Sign Up first'
             })
         }
-        
+
         console.log(await bcrypt.compare(user.password, userDb.password))
 
         // if the password entered is invalid => return an error response
@@ -67,9 +67,9 @@ async function loginUser(req, res, next) {
     }
 }
 
-async function registerUser(req, res, next) {
+async function signupUser(req, res, next) {
     let user = req.body
-    let {error} = validateUser(user)
+    let { error } = validateUser(user)
 
     // if the user objects follows the validation
     if (error) {
@@ -101,7 +101,7 @@ async function registerUser(req, res, next) {
         })
     } catch (err) {
         console.log(err.message)
-        
+
         // if user creation fails then there must be a validation error
         return res.status(400).json({
             ok: false,
@@ -120,6 +120,6 @@ async function logoutUser(req, res, next) {
 
 module.exports = {
     loginUser,
-    registerUser,
+    signupUser,
     logoutUser
 }

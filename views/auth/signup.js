@@ -21,12 +21,12 @@ signupForm.addEventListener('submit', async function(e) {
     console.log('submit')
 
     let user = {
-        name: signupForm ? .name ? .value,
-        email: signupForm ? .email ? .value,
-        password: signupForm ? .password ? .value
+        name: signupForm?.name?.value,
+        email: signupForm?.email?.value,
+        password: signupForm?.password?.value
     }
 
-    fetch('/register', {
+    fetch('/api/auth/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

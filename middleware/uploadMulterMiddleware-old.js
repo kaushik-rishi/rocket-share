@@ -10,7 +10,7 @@ const storageEngine = multer.diskStorage({
         const bucketPath = path.join(__dirname, '..', 'bucket');
         const folderId = nanoid(8);
         const masterFolder = path.join(bucketPath, folderId);
- 
+
         // to access the folder ID in the next route handler (final middleware)
         req.folderId = folderId;
 
@@ -25,10 +25,10 @@ const storageEngine = multer.diskStorage({
         })
     },
 
-    filename: function (req, file, callback) {
+    filename: function(req, file, callback) {
         console.log(file);
         const uniqueName = file.originalname;
-                           // Date.now() + Math.round(Math.random() * 1E9) + path.extname(file.originalname);
+        // Date.now() + Math.round(Math.random() * 1E9) + path.extname(file.originalname);
 
         // err, file_name
         callback(null, uniqueName);
@@ -38,6 +38,8 @@ const storageEngine = multer.diskStorage({
 // initialise the upload variable
 const uploadMiddleware = multer({
     storage: storageEngine,
+    // Question: How to generate limits dynamically 
+    // Answer ?? May be we can have multiple middlewares i.e multiple middleware objects
     limits: {
         fileSize: 1000000 * 100
     }
