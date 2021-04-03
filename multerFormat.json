@@ -17,3 +17,42 @@
   "path": "/home/darkangel/WAD-Group-15/backend/bucket/aXLaoUlX/dp.png",
   "size": 41113
 }
+
+// upload object in the database
+Upload {
+  "dataValues": {
+    "id": "RNex--6y",
+    "originalname": "ipad@2x.webp",
+    "encoding": "7bit",
+    "mimetype": "image/webp",
+    "filename": "RNex--6y",
+    "size": 45868
+  },
+  "_previousDataValues": {
+    "id": "RNex--6y",
+    "originalname": "ipad@2x.webp",
+    "encoding": "7bit",
+    "mimetype": "image/webp",
+    "filename": "RNex--6y",
+    "size": 45868
+  },
+  "_changed": Set(0) {},
+  "_options": {
+    "isNewRecord": false,
+    "_schema": null,
+    "_schemaDelimiter": "",
+    "raw": true,
+    "attributes": [
+      "id",
+      "originalname",
+      "encoding",
+      "mimetype",
+      "filename",
+      "size"
+    ]
+  },
+  "isNewRecord": false
+}
+
+
+// upload model with the user included
