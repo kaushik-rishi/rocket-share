@@ -102,3 +102,6 @@ res.download(pathOfTheFile, file.originalname); // initiate the download
 **Todo ASAP**
 - change the cookies to http only and send them with the request
 - change the jwt storage from cookies to localstorage + authbearertoken
+
+**Ideas**:
+- Make a file sharable to certain people

@@ -28,9 +28,6 @@ const storageEngine = multer.diskStorage({
     filename: function(req, file, callback) {
         console.log(file);
         const uniqueName = file.originalname;
-        // Date.now() + Math.round(Math.random() * 1E9) + path.extname(file.originalname);
-
-        // err, file_name
         callback(null, uniqueName);
     }
 });

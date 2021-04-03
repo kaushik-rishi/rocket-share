@@ -18,15 +18,7 @@ app.use('/', express.static(path.join(__dirname, 'views')));
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
-app.use('/api/auth', require('./routes/api/authRoutes'));
-app.use('/api/upload', require('./routes/api/uploadRoutes'));
-
-app.use('/download', require('./routes/download'));
-app.use('/', require('./routes/viewRoutes')); // also renders the /file/:uuid page
-
-
-// TODO : Remove their respective files
-// app.use('/', require('./routes/filehandlingRoutes'));
+app.use('/', require('./routes'))
 
 const PORT = process.env.PORT || 8080;
 
