@@ -4,11 +4,7 @@ const {
 
 module.exports = async function(req, res, next) {
     const id = req.params.uuid;
-    const file = await Upload.findOne({
-        where: {
-            id: id
-        }
-    });
+    const file = await Upload.findByPk(id);
 
     if (!file) return res.render('download', {
         ok: false,
