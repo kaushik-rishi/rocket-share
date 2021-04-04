@@ -1,6 +1,8 @@
 node_modules/
 .vscode/
 .idea/
-backend/bucket/*
-!backend/bucket/.gitkeep
+bucket/*
+!bucket/.gitkeep
 *.env
+*.env.*
+

@@ -15,7 +15,7 @@ router.get('/:uuid', async(req, res) => {
     if (!file) {
         return res.status(404).send({
             ok: false,
-            err: 'Either there was no file with this link or the link has probably been expired'
+            msg: 'Either there was no file with this link or the link has probably been expired'
         });
     }
 
@@ -25,13 +25,13 @@ router.get('/:uuid', async(req, res) => {
             if (err.code === 'ENOENT') {
                 return res.status(404).json({
                     ok: false,
-                    err: 'The requested file was not found in the bucket'
+                    msg: 'The requested file was not found in the bucket'
                 });
             }
 
             return res.status(500).json({
                 ok: false,
-                err: err.message
+                msg: err.message
             });
         }
         res.download(filePath, file.originalname);

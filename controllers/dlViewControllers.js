@@ -8,7 +8,7 @@ module.exports = async function(req, res, next) {
 
     if (!file) return res.render('download', {
         ok: false,
-        err: 'Either there was no file with this link or the link has probably been expired'
+        msg: 'Either there was no file with this link or the link has probably been expired'
     });
 
     res.render('download', {

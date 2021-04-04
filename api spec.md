@@ -105,3 +105,7 @@ res.download(pathOfTheFile, file.originalname); // initiate the download
 
 **Ideas**:
 - Make a file sharable to certain people
+
+
+**Important**:
+- In the share file page instead of putting the download link in the url section we will put the /file/<nanoid> link

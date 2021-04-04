@@ -22,6 +22,10 @@
             /* to align the main container with the navbar and the footer in place */
             height: 53vh;
         }
+
+        .hide {
+            display: none;
+        }
     </style>
 </head>
 
@@ -34,7 +38,8 @@
             Share your work and ideas through instantly shareable links.
         </p>
 
-        <form action="/api/upload" method="POST" enctype="multipart/form-data">
+        <!-- <form action="/api/upload" method="POST" enctype="multipart/form-data" id="form__upload"> -->
+        <form enctype="multipart/form-data" id="form__upload">
             <label class="btn btn--secondary" for="fileupload">Select File</label>
             <br><br><br>
             <input type="file" id="fileupload" name="fileupload">
@@ -42,14 +47,55 @@
             <br>
             <button type="submit" class="btn btn--stretched btn--accent">submit</button>
         </form>
+
+        <div class="file-uploaded">
+            <div class="msg"></div>
+            <div class="originalname"></div>
+            <div class="link-arrow url hide"></div>
+        </div>
     </div>
 
-    <div id="footer-loader"></div>
+    <!-- <div id="footer-loader"></div> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
     <script src="/components/loader_scripts/loadNavAndFooter.js"></script>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script type="text/javascript">
+        const form = document.getElementById('form__upload');
+        const fileupload = document.getElementById('fileupload');
+        const submitBtn = document.querySelector('#form__upload > button');
+
+        // NEW MDN DOCS : https://developer.mozilla.org/en-US/docs/Web/API/FormData/append
+        const data = new FormData();
+
+        data.append('fileupload', fileupload.files[0]); // for the params stuff in the POST request
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            fetch('/api/upload', {
+                method: 'POST',
+                body: data
+            })
+                .then(response => response.json())
+                .then(apiresponse => renderData(apiresponse));
+        });
+
+        function renderData(data) {
+            if (data.ok === true) {
+                document.querySelector('.msg').innerText = data.msg;
+                document.querySelector('.originalname').innerText = `File Uploaded: ${data.originalname}`;
+                document.querySelector('.url').classList.remove('hide');
+                document.querySelector('.url').innerText = data.url;
+                submitBtn.disabled = true;
+                submitBtn.style.background = '#ddd';
+            } else {
+                document.querySelector('.msg').innerText = data.msg;
+            }
+        }
+    </script>
 </body>
 
 </html>

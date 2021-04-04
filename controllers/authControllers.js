@@ -13,7 +13,7 @@ async function loginUser(req, res, next) {
 
     if (error) return res.status(400).json({
         ok: false,
-        err: error?.details[0]?.message || 'Server error'
+        msg: error?.details[0]?.message || 'Server error'
     })
 
     try {
@@ -30,7 +30,7 @@ async function loginUser(req, res, next) {
         if (!userDb) {
             return res.status(400).json({
                 ok: false,
-                err: 'Email ID is not registered, Sign Up first'
+                msg: 'Email ID is not registered, Sign Up first'
             })
         }
 
@@ -40,7 +40,7 @@ async function loginUser(req, res, next) {
         if (await bcrypt.compare(user.password, userDb.password) === false) {
             return res.status(400).json({
                 ok: false,
-                err: 'Invalid password'
+                msg: 'Invalid password'
             })
         }
 
@@ -62,7 +62,7 @@ async function loginUser(req, res, next) {
     } catch (err) {
         return res.status(400).json({
             ok: false,
-            err: err.message
+            msg: err.message
         })
     }
 }
@@ -75,7 +75,7 @@ async function signupUser(req, res, next) {
     if (error) {
         res.status(400).json({
             ok: false,
-            err: error?.details[0]?.message || 'Server error'
+            msg: error?.details[0]?.message || 'Server error'
         })
     }
 
@@ -105,7 +105,7 @@ async function signupUser(req, res, next) {
         // if user creation fails then there must be a validation error
         return res.status(400).json({
             ok: false,
-            err: validationErrorHandler(err)
+            msg: validationErrorHandler(err)
         })
     }
 }

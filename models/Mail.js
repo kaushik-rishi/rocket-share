@@ -1,4 +1,3 @@
-require('dotenv').config();
 const Joi = require('joi');
 const db = require('../config/db');
 const { DataTypes } = require('sequelize');

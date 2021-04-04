@@ -13,9 +13,10 @@ const uploadPost = (req, res, next) => {
 
         // error while uploading the file
         if (err) {
+            console.log(err.message);
             return res.status(500).send({
                 ok: false,
-                err: err.message
+                msg: err.message
             });
         }
 
@@ -24,8 +25,8 @@ const uploadPost = (req, res, next) => {
         if (!file) {
             // bad request
             res.status(400).json({
-                "ok": false,
-                "err": "Something went wrong while uplaoding the file... [The fields should not be empty]"
+                ok: false,
+                msg: "Something went wrong while uplaoding the file... [The fields should not be empty]"
             });
         } else {
             // save the upload metadata to the server
@@ -41,9 +42,10 @@ const uploadPost = (req, res, next) => {
             };
 
             const { error } = validateUpload(uploadObject);
+            console.log(error);
             if (error) return res.status(400).send({
                 ok: false,
-                err: error.details[0].message
+                msg: error.details[0].message
             });
 
             // TODO : handle the case when the file upload is a success but the DB fails to store the data
@@ -52,9 +54,10 @@ const uploadPost = (req, res, next) => {
                 uploadObject = await Upload.create(uploadObject);
                 console.log(uploadObject);
             } catch (err) {
+                console.log(err);
                 return res.send({
                     ok: false,
-                    err: err.message
+                    msg: err.message
                 });
             }
 
@@ -63,7 +66,7 @@ const uploadPost = (req, res, next) => {
                 ok: true,
                 msg: 'file uploaded successfully',
                 originalname: uploadObject.originalname,
-                // WHEN A GET REQUEST IS MADE TO THIS PATH THE DOWNLOAD PAGE WILL BE RENDERED
+                // TODO : WHEN A GET REQUEST IS MADE TO THIS PATH THE DOWNLOAD PAGE WILL BE RENDERED
                 url: `${process.env.APP_ROOT_URL}/download/${uploadObject.id}`
             });
         }
