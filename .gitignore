@@ -5,4 +5,3 @@ bucket/*
 !bucket/.gitkeep
 *.env
 *.env.*
-
