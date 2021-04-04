@@ -1,0 +1,112 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Share your file in less than 60 seconds." />
+  <title>Rocket 🚀 File Share - Share files quickly</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+  <link rel="stylesheet" href="{% static '/index_css/normalize.css' %}" />
+  <link rel="stylesheet" href="{% static '/index_css/styles.css' %}" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <title>Share</title>
+</head>
+
+<body>
+
+    <header>
+      <nav class="nav collapsible">
+        <div class="xx_nav_brand">
+          <img src="{% static '/svgs/rocket1.svg' %}" id="xx_brand_logo">
+          <span><a href="./" class="normal-link" id="xx__brandname__xx">Rocket Share</a></span>
+        </div>
+        <svg class="icon icon--white nav__toggler">
+          <use xlink:href="{% static '/images/sprite.svg' %}#menu"></use>
+        </svg>
+        <ul class="list nav__list collapsible__content">
+          <li class="nav__item"><a href="./">Home</a></li>
+          <li class="nav__item active"><a href="./Accounts/Login">Login</a></li>
+          <li class="nav__item"><a href="./Accounts/Signup">Sign Up</a></li>
+          <li class="nav__item"><a href="./Share">Share</a></li>
+          <li class="nav__item"><a href="./Forums">Forum</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container" 
+          style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px;"      >
+      <h1 class="blockheading aos-init aos-animate">Upload and Share a File</h1>
+      <p class="herotagline">
+        Share your work and ideas through instantly shareable links.
+      </p>
+      <label class ="btn btn--accent btn--stretched" for="myfile">Upload</label>
+      <input type="file" id="myfile" name="myfile" hidden>
+    </div>
+    <footer class="block block--dark footer">
+        <div class="container grid footer__sections">
+          <section class="collapsible collapsible--expanded footer__section">
+            <div class="collapsible__header">
+              <h2 class="collapsible__heading footer__heading">Pages</h2>
+              <svg class="icon icon--white collapsible__chevron">
+                <use xlink:href="{% static '/images/sprite.svg' %}#chevron"></use>
+              </svg>
+            </div>
+            <div class="collapsible__content">
+              <ul class="list">
+                <li><a href="#">Share</a></li>
+                <li><a href="#">Edit files</a></li>
+                <li><a href="#">Discussion Forums</a></li>
+              </ul>
+            </div>
+          </section>
+          <section class="collapsible footer__section">
+            <div class="collapsible__header">
+              <h2 class="collapsible__heading footer__heading">Company</h2>
+              <svg class="icon icon--white collapsible__chevron">
+                <use xlink:href="{% static '/images/sprite.svg' %}#chevron"></use>
+              </svg>
+            </div>
+            <div class="collapsible__content">
+              <ul class="list">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Affiliates</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </div>
+          </section>
+          <section class="collapsible footer__section">
+            <div class="collapsible__header">
+              <h2 class="collapsible__heading footer__heading">Support</h2>
+              <svg class="icon icon--white collapsible__chevron">
+                <use xlink:href="{% static '/images/sprite.svg' %}#chevron"></use>
+              </svg>
+            </div>
+            <div class="collapsible__content">
+              <ul class="list">
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Knowledge Base</a></li>
+                <li><a href="#">FAQ</a></li>
+              </ul>
+            </div>
+          </section>
+          <div class="footer__brand">
+            <div class="xx_nav_brand">
+              <img src="{% static '/svgs/rocket1.svg' %}" id="xx_brand_logo">
+              <span><a href="../">Rocket Share</a></span>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <script src="{% static '/js' %}/main.js"></script>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
+    </body>
+</html>    
+      
