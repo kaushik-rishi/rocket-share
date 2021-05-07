@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Share your file in less than 60 seconds." />
+  <title>Rocket 🚀 File Share - Share files quickly</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="stylesheet" href="/static/css/journal.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/normalize.css" />
+  <link rel="stylesheet" href="/static/css/index.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+  <nav class="nav collapsible">
+      <div class="xx_nav_brand">
+          <img src="/static/assets/rocket.svg" id="xx_brand_logo">
+          <span href="/" class="normal-link">Rocket Share</a></span>
+      </div>
+      <svg class="icon icon--white nav__toggler">
+      <use xlink:href="/static/assets/images/sprite.svg#menu"></use>
+    </svg>
+      <ul class="list nav__list collapsible__content">
+          <li class="nav__item"><a href="/">Home</a></li>
+          <li class="nav__item"><a href="/users/login">Login</a></li>
+          <li class="nav__item"><a href="/users/register">Sign Up</a></li>
+          <li class="nav__item"><a href="/share">Share</a></li>
+          <li class="nav__item"><a href="/forum">Forum</a></li>
+      </ul>
+  </nav>
+  </div>
+  <div class="line"></div>
+  <section class="block block--dark block--skewed-left hero">
+    <div class="container grid grid--1x2">
+      <header class="block__header hero__content">
+        <h1 data-aos="fade-right" class="block__heading">
+          File sharing for pros
+        </h1>
+        <p class="hero__tagline">
+          Share your files in less than 60 seconds.
+        </p>
+        <a href="" class="btn btn--accent btn--stretched">Share File</a>
+      </header>
+      <picture data-aos="zoom-in">
+        <source type="image/webp" srcset="/static/assets/images/banner.webp 1x, /images/banner@2x.webp 2x" />
+        <source type="image/png" srcset="/static/assets/images/banner.png 1x, /images/banner@2x.png 2x" />
+        <img class="hero__image" src="/static/assets/images/banner.png" alt="" />
+      </picture>
+    </div>
+  </section>
+
+  <section data-aos="fade-up" class="block container block-domain">
+    <header class="block__header">
+      <h2>Search for a file</h2>
+      <p>
+        Seamlessly search for a file
+      </p>
+    </header>
+    <form id="frm">
+      <div class="input-group">
+        <input type="text" class="input" name="id" placeholder="Insert the UUID of the file on the server" />
+        <button type="submit" class="btn btn--accent">
+          <svg class="icon icon--white">
+            <use xlink:href="/static/assets/images/sprite.svg#search"></use>
+          </svg>
+          Get the file
+        </button>
+      </div>
+    </form>
+  </section>
+  <section data-aos="fade-up" class="block container block-plans">
+    <div class="grid grid--1x3">
+      <div class="plan">
+        <div class="card card--secondary">
+          <header class="card__header">
+            <span class="plan__price">2MB</span>
+            <span class="plan__billing-cycle">/file</span>
+            <span class="badge badge--secondary badge--small">Limited</span>
+            <span class="plan__description">For Non Registered Users</span>
+          </header>
+          <div class="card__body">
+            <ul class="list list--tick">
+              <li class="list__item">Basic File Sharing</li>
+              <li class="list__item">Share files upto 2 Megs</li>
+              <li class="list__item">200 mb storage</li>
+            </ul>
+            <ul class="list list--cross">
+              <li class="list__item">Participate in discussion forums</li>
+              <li class="list__item">Create private files</li>
+            </ul>
+            <button class="btn btn--outline btn--block">Share Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="plan plan--popular">
+        <div class="card card--primary">
+          <header class="card__header">
+            <span class="plan__price">5MB</span>
+            <span class="plan__billing-cycle">/file</span>
+            <span class="badge badge--primary badge--small">No Restriction</span>
+            <span class="plan__description">Registered Users</span>
+          </header>
+          <div class="card__body">
+            <ul class="list list--tick">
+              <li class="list__item">Share files with authorisation</li>
+              <li class="list__item">Share files with a size of up to 5MB</li>
+              <li class="list__item">Create private files</li>
+              <li class="list__item">1000 MB Storage</li>
+              <li class="list__item">Participate in discussion forums</li>
+            </ul>
+            <button class="btn btn--outline btn--block">Register Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="plan">
+        <div class="card card--secondary">
+          <header class="card__header">
+            <span class="plan__price">Edit files</span>
+            <span class="plan__description">Edit images, etc with no Adware</span>
+          </header>
+          <div class="card__body">
+            <ul class="list list--tick">
+              <li class="list__item">Crop Images online</li>
+              <li class="list__item">Convert between file formats</li>
+              <li class="list__item">Image to PDF</li>
+              <li class="list__item">Merge PDF</li>
+              <li class="list__item">Split PDF</li>
+              <li class="list__item">Resize image</li>
+            </ul>
+            <button class="btn btn--outline btn--block">Convert Now !</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="block container">
+    <header class="block__header">
+      <h2>Play with files on the Go !</h2>
+      <p>
+        Elite file sharing with a smart and minimal User Interface
+      </p>
+    </header>
+    <article class="grid grid--1x2 feature">
+      <div class="feature__content" data-aos="fade-right">
+        <span class="icon-container">
+          <svg class="icon icon--primary">
+            <use xlink:href="/static/assets/images/sprite.svg#easy"></use>
+          </svg>
+        </span>
+        <h3 class="feature__heading">Super Easy to Use</h3>
+        <p>
+          We have an attractive UI and a simple approach.
+          So easy, even a caveman could do it.
+        </p>
+        <!-- TODO : redirect to about page -->
+        <a href="#" class="link-arrow">Learn More</a>
+      </div>
+      <picture data-aos="zoom-in-left">
+        <source type="image/webp" srcset="/static/assets/images/easy.webp 1x, /images/easy@2x.webp 2x" />
+        <source type="image/jpg" srcset="/static/assets/images/easy.jpg 1x, /images/easy@2x.jpg 2x" />
+        <img class="feature__image" src="/static/assets/images/easy@2x.jpg" alt="" />
+      </picture>
+    </article>
+    <article class="grid grid--1x2 feature">
+      <div class="feature__content">
+        <span class="icon-container">
+          <svg class="icon icon--primary">
+            <use xlink:href="/static/assets/images/sprite.svg#computer"></use>
+          </svg>
+        </span>
+        <h3 class="feature__heading">Simply Fast Websites</h3>
+        <p>
+          We have kept in mind slow connections and have minimised the dependencies of our application for the user to
+          have a seamless experience.
+        </p>
+        <a href="#" class="link-arrow">Learn More</a>
+      </div>
+      <picture>
+        <source type="image/webp" srcset="/static/assets/images/fast.webp 1x, /images/fast@2x.webp 2x" />
+        <source type="image/jpg" srcset="/static/assets/images/fast.jpg 1x, /images/fast@2x.jpg 2x" />
+        <img class="feature__image" src="/static/assets/images/fast@2x.jpg" alt="" />
+      </picture>
+    </article>
+    <article class="grid grid--1x2 feature">
+      <div class="feature__content">
+        <span class="icon-container">
+          <svg class="icon icon--primary">
+            <use xlink:href="/static/assets/images/sprite.svg#clock"></use>
+          </svg>
+        </span>
+        <h3 class="feature__heading">Contact Us</h3>
+        <p>
+          You can contact the developers of this site on discord, github, gitter channels
+        </p>
+        <a href="#" class="link-arrow">Learn More</a>
+      </div>
+      <picture>
+        <source type="image/webp" srcset="/static/assets/images/support.webp 1x, /images/support@2x.webp 2x" />
+        <source type="image/jpg" srcset="/static/assets/images/support.jpg 1x, /images/support@2x.jpg 2x" />
+        <img class="feature__image" src="/static/assets/images/support@2x.jpg" alt="" />
+      </picture>
+    </article>
+  </section>
+  <section class="block block--dark block--skewed-right block-showcase">
+    <header class="block__header">
+      <h2>User-friendly Control Panel</h2>
+    </header>
+    <div class="container grid grid--1x2">
+      <picture data-aos="fade-right" class="block-showcase__image">
+        <source type="image/webp" srcset="/static/assets/images/ipad.webp 1x, /images/ipad@2x.webp 2x" />
+        <source type="image/png" srcset="/static/assets/images/ipad.png 1x, /images/ipad@2x.png 2x" />
+        <img src="/static/assets/images/ipad.png" alt="" />
+      </picture>
+      <ul class="list" data-aos="fade-up">
+        <li>
+          <div class="media">
+            <div class="media__image">
+              <img src="/static/assets/images/gallery.svg" class="icon icon--primary">
+            </div>
+            <div class="media__body">
+              <h3 class="media__title">Elite Gallery</h3>
+              <p>
+                Manage already uploaded files at one place.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="media">
+            <div class="media__image">
+              <img src="/static/assets/images/cloudsvg.svg" class="icon icon--primary">
+            </div>
+            <div class="media__body">
+              <h3 class="media__title">Save to the Cloud after Edit.</h3>
+              <p>
+                Save your files directly onto the cloud after editing them using the file manipulation tools provided.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="media">
+            <div class="media__image">
+              <svg class="icon icon--primary">
+                <use xlink:href="/static/assets/images/sprite.svg#quotes"></use>
+              </svg>
+            </div>
+            <div class="media__body">
+              <h3 class="media__title">Discussion Forums</h3>
+              <p>
+                Post a request for a file using the discussion forums provide.
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <div class="container">
+    <div class="callout callout--primary callout-signup">
+      <div class="grid grid--1x2">
+        <div class="callout__content">
+          <h2 class="callout__heading">Ready to Share Files ?</h2>
+          <p>
+            Do consider registering for free to get more perks
+          </p>
+        </div>
+        <a href="/share" class="btn btn--secondary btn--stretched">Share File</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="block block--dark footer">
+      <div class="container grid footer__sections">
+          <section class="collapsible collapsible--expanded footer__section">
+              <div class="collapsible__header">
+                  <h2 class="collapsible__heading footer__heading">Pages</h2>
+                  <svg class="icon icon--white collapsible__chevron">
+            <use xlink:href="/static/assets/images/sprite.svg#chevron"></use>
+          </svg>
+              </div>
+              <div class="collapsible__content">
+                  <ul class="list">
+                      <li><a href="/share">Share</a></li>
+                      <li><a href="/edit">Edit files</a></li>
+                      <li><a href="/forum">Discussion Forums</a></li>
+                  </ul>
+              </div>
+          </section>
+          <section class="collapsible footer__section">
+              <div class="collapsible__header">
+                  <h2 class="collapsible__heading footer__heading">Company</h2>
+                  <svg class="icon icon--white collapsible__chevron">
+            <use xlink:href="/static/assets/images/sprite.svg#chevron"></use>
+          </svg>
+              </div>
+              <div class="collapsible__content">
+                  <ul class="list">
+                      <li><a href="/home#about">About</a></li>
+                      <li><a href="/home#affilliates">Affiliates</a></li>
+                      <li><a href="/blog">Blog</a></li>
+                  </ul>
+              </div>
+          </section>
+          <section class="collapsible footer__section">
+              <div class="collapsible__header">
+                  <h2 class="collapsible__heading footer__heading">Support</h2>
+                  <svg class="icon icon--white collapsible__chevron">
+            <use xlink:href="/static/assets/images/sprite.svg#chevron"></use>
+          </svg>
+              </div>
+              <div class="collapsible__content">
+                  <ul class="list">
+                      <li><a href="/users/login">Register</a></li>
+                      <li><a href="/contact">Contact Us</a></li>
+                      <li><a href="/devportal">Developer's portal</a></li>
+                  </ul>
+              </div>
+          </section>
+          <div class="footer__brand">
+              <div class="xx_nav_brand">
+                  <img src="/static/assets/rocket.svg" id="xx_brand_logo">
+                  <span><a href="/">Rocket Share</a></span>
+              </div>
+          </div>
+      </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    const collapsibles = document.querySelectorAll(".collapsible");
+    collapsibles.forEach((item) =>
+      item.addEventListener("click", function () {
+        this.classList.toggle("collapsible--expanded");
+      })
+    );
+    
+    const form = document.querySelector('form#frm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (form.id.value.length > 0) {
+        window.location=`/file/${form.id.value}`;
+      } else {
+        alert('Please mention some id');
+      }
+    });
+  </script>
+</body>
+
+</html>

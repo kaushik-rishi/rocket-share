@@ -1,0 +1,323 @@
+* {
+  box-sizing: border-box;
+}
+*::selection {
+  background: pink;
+}
+
+body,
+html {
+  background-color: #edf5fe;
+  font-family: Open Sans, sans-serif;
+  font-weight: 500;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+li a {
+  text-decoration: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.hide {
+  display: none !important;
+}
+
+.no-focus-outline:focus {
+  outline: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.left-nav {
+  width: 25%;
+  background: #0a4865;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  padding-right: 40px;
+  transition: all 0.5s ease-in-out;
+}
+.left-nav ul {
+  height: 100%;
+  width: 100%;
+  padding-top: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.left-nav ul li {
+  padding: 30px 10px;
+  width: 100%;
+  border-bottom: 2px solid white;
+}
+.left-nav ul li a {
+  color: white;
+}
+
+.right-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.upload-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: white;
+  border-radius: 25px;
+  box-shadow: 0 0 20px 20px #00000013;
+}
+
+.drop-zone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 500px;
+  min-height: 200px;
+  border: 2px dashed #0288d147;
+  margin: 20px;
+  border-radius: 10px;
+  transition: 0.2s ease;
+}
+.drop-zone.dragged {
+  background: #edf5fe;
+  border-color: rgba(0, 0, 0, 0.2784313725);
+}
+.drop-zone.dragged .icon-container img {
+  transition: transform 0.2s ease-in-out;
+}
+.drop-zone.dragged .icon-container img.center {
+  -webkit-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
+.drop-zone.dragged .icon-container img.right {
+  -webkit-transform: rotate(15deg) translateX(20px) scale(0.8);
+  -ms-transform: rotate(15deg) translateX(20px) scale(0.8);
+  transform: rotate(15deg) translateX(20px) scale(0.8);
+}
+.drop-zone.dragged .icon-container img.left {
+  -webkit-transform: rotate(-15deg) translateX(-20px) scale(0.8);
+  -ms-transform: rotate(-15deg) translateX(-20px) scale(0.8);
+  transform: rotate(-15deg) translateX(-20px) scale(0.8);
+}
+
+.icon-container {
+  width: 75px;
+  position: relative;
+  height: 100px;
+}
+.icon-container img {
+  position: absolute;
+  transform-origin: bottom;
+}
+.icon-container img.center {
+  z-index: 100;
+}
+.icon-container img.right, .icon-container img.left {
+  filter: grayscale(40%);
+}
+
+.browseBtn {
+  color: #03a9f4;
+  cursor: pointer;
+}
+
+.progress-container {
+  min-width: 500px;
+  height: 80px;
+  border: 2px solid #edf5fe;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  position: relative;
+}
+.progress-container .bg-progress {
+  background: #edf5fe;
+  height: 100%;
+  width: 100%;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  transition: width 0.25s linear;
+  transform-origin: left;
+  border-radius: 2%;
+  position: absolute;
+}
+.progress-container .inner-container {
+  position: absolute;
+  z-index: 100;
+  margin: 10px 15px;
+  width: 100%;
+}
+.progress-container .inner-container .progress-bar {
+  width: calc(100% - 25px);
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  background: #03a9f4;
+  border: 2px solid #03a9f4;
+  border-radius: 50px;
+  transform-origin: left;
+  transition: transform 0.2s ease-in-out;
+}
+
+.link-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.link-container .sharing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 500px;
+}
+.link-container .sharing-container .input-container {
+  width: 100%;
+  position: relative;
+  padding-bottom: 5px;
+}
+.link-container .sharing-container .input-container input {
+  width: 100%;
+  border: 2px dashed #03a9f4;
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-size: 18px;
+  background: #f5fcff;
+  color: #0000008c;
+}
+.link-container .sharing-container .input-container .copy-icon {
+  position: absolute;
+  width: 25px;
+  height: 20px;
+  right: 7px;
+  top: 12px;
+  background: #edf5fe;
+  cursor: pointer;
+}
+.link-container .sharing-container .email-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100px;
+  width: 100%;
+  padding: 10px 30px 15px 30px;
+  margin: 0px 0px 20px 0px;
+  border: 2px solid #0288d147;
+  border-radius: 10px;
+}
+.link-container .sharing-container .email-container form .form-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.link-container .sharing-container .email-container form .form-group input {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.6);
+  padding: 7px;
+  margin: 5px 0px;
+  border: none;
+  border-bottom: 2px solid #0288d147;
+}
+.link-container .sharing-container .email-container form .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 2rem;
+}
+.link-container .sharing-container .email-container form .btn button {
+  cursor: pointer;
+  padding: 13px 20px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  color: white;
+  background-color: #03a9f4;
+}
+
+body {
+  position: relative;
+}
+body .toast {
+  border-radius: 10px;
+  color: white;
+  position: absolute;
+  top: 25px;
+  background: #1a1a1d;
+  box-shadow: 0px 13px 27px -5px rgba(50, 50, 93, 0.25), 0px 8px 16px -8px rgba(0, 0, 0, 0.3), 0px -6px 16px -6px rgba(0, 0, 0, 0.025);
+  padding: 10px 20px;
+  font-size: 110%;
+  margin-top: -100px;
+  transition: 0.5s;
+  /*
+  - This is positioned in the center because the body has a flex property
+  - We can also position it in the bottom center without using flex
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  @include transform(translateX(-50%));
+  */
+}
+body .toast-show {
+  margin-top: 0;
+}
+
+body {
+  position: relative;
+}
+
+.menu-container {
+  z-index: 100;
+}
+.menu-container .menu-toggle {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+  padding: 10px;
+  height: 40px;
+  width: 40px;
+}
+
+.hide-pro {
+  opacity: 0;
+  display: none;
+  transition: opacity 0.5s linear;
+}
+
+.right-top-tag {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+.right-top-tag img {
+  width: 50px;
+}
+
+/*# sourceMappingURL=style.css.map */

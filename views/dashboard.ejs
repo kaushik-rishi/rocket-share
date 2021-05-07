@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Dashboard</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/static/css/dashboard.css">
+	<script src="/static/js/nav.js" defer></script>
+</head>
+<body>
+	<div class="toggle">
+		<i class="fas fa-bars fa-2x toggle"></i>
+	</div>
+	<nav class="navbar">
+		<a href="/home" ><img class="logo" src="/static/assets/rocket.svg" style="height:60px" alt=""></a>
+		<a href="/logout" class="button">Logout</a>
+	</nav>
+
+	<main>
+		<div class="user-info">
+			<div class="profile-pic">
+				<% if (user.profilePic !== undefined) {%>
+					<img src="<%= user.profilePic %>" class="far pfp" alt="">
+				<% } else {%>
+					<i class="far fa-user fa-3x"></i>
+				<% } %>
+			</div>
+			<div class="details">
+				<div class="username"><%= user.name %></div>
+				<% if (user.email !== undefined) {%>
+					<div class="email"><%= user.email %></div><br><br>
+					<%= user.profilePic  %>
+				<% } %>
+			</div>
+		</div>
+		<% if (user.files_created.length > 0) { %>
+			<div class="info-table">
+				<div class="main-table">
+	                <table id="all-devices" >
+	                    <thead>
+	                        <tr>
+	                            <th>Name</th>
+	                            <!-- <th>Extension</th> -->
+	                            <th>Created on</th>
+	                            <th>Share</th>
+	                            <th>Action</th>
+	                            <!-- <th>test</th> -->
+	                        </tr>
+	                    </thead>
+	                    <!-- Fill the table Dynamically -->
+	                    <tbody class="tableData">
+						  	<% user.files_created.forEach(file => { %>
+						  		<tr>
+								    <td class="filename-td"><%= file.originalname %></td>
+								    <td><%= file.date %></td>
+								    <td class="share-btns">
+								    	<a class="download-btn" href="http://localhost:5000/file/<%= file.id %>" target="_blank">
+								    		<i class="fas fa-external-link-alt"></i>
+								    	</a>
+										<a class="download-btn whatsapp" href="whatsapp://send?text=http://localhost:5000/file/<%= file.id %>">
+								    		<i class="fab fa-whatsapp"></i>
+								    	</a>
+								    </td>
+								    <td><a class="download-btn delete" data-id=<%= file.id %>>Delete</a> </td>
+						  		</tr>
+						  	<% }) %>
+	                    </tbody>
+	                </table>
+	            </div>
+			</div>
+		<% } else { %>
+			<div class="no-file">
+				<img class="empty" src="/static/assets/empty.svg" alt="">
+				<p class="empty-msg">It's quite empty here</p>
+			</div>
+		<% } %>
+	</main>
+</body>
+</html>

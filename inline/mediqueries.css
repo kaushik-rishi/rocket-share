@@ -1,0 +1,218 @@
+
+@media screen and (min-width: 768px) {
+    .grid--1x2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .grid--1x3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .testimonial__image {
+        margin: 0;
+    }
+    .testimonial .quote {
+        margin: 5rem 0 0 6rem;
+        font-size: 120%;
+        line-height: 1.5;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .callout .grid--1x2 {
+        grid-template-columns: 1fr auto;
+    }
+    .callout__content {
+        text-align: left;
+    }
+    .callout .btn {
+        justify-self: start;
+        margin: 0 2rem;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .nav__toggler {
+        display: none;
+    }
+    .nav__list {
+        width: auto;
+        display: flex;
+        font-size: 1.6rem;
+        max-height: 100%;
+        opacity: 1;
+    }
+    .nav__item {
+        border: 0;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .hero__content {
+        text-align: left;
+        align-self: center;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .hero {
+        padding-top: 0;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .block-domain__prices {
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .feature:nth-of-type(even) .feature__content {
+        order: 2;
+    }
+}
+
+
+/* Showcase Block */
+
+@media screen and (min-width: 768px) {
+    .block-showcase .grid {
+        grid-template-columns: 50% 50%;
+    }
+    .block-showcase__image {
+        justify-self: end;
+    }
+    .block-showcase__image>img {
+        width: auto;
+        max-width: 700px;
+    }
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .footer {
+        font-size: 1.5rem;
+    }
+    .footer__sections {
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    }
+    .footer .collapsible__chevron {
+        display: none;
+    }
+    .footer .collapsible__content {
+        opacity: 1;
+        max-height: 100%;
+    }
+    .footer__brand {
+        order: -1;
+        margin-top: 1rem;
+    }
+    .footer__copyright {
+        font-size: 1.5rem;
+    }
+    .footer__section {
+        border: 0;
+    }
+    .footer__heading {
+        font-size: 1.6rem;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    body {
+        font-size: 1.8rem;
+    }
+    h1 {
+        font-size: 8rem;
+    }
+    h2 {
+        font-size: 4rem;
+    }
+    h3 {
+        font-size: 2.4rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .link-arrow {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+@media screen and (min-width: 1024px) {
+    .badge {
+        font-size: 1.5rem;
+    }
+    .badge--small {
+        font-size: 1.2rem;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .list--tick .list__item {
+        padding-left: 0;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .btn {
+        font-size: 1.5rem;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .input {
+        font-size: 1.5rem;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .plan--popular {
+        transform: scale(1.1);
+    }
+    .plan__name {
+        font-size: 1.4rem;
+    }
+    .plan__price {
+        font-size: 5rem;
+    }
+    .plan__billing-cycle {
+        font-size: 1.6rem;
+    }
+    .plan__description {
+        font-size: 1.7rem;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .quote {
+        font-size: 2rem;
+    }
+    .quote__author {
+        font-size: 2.4rem;
+    }
+    .quote__organization {
+        font-size: 1.6rem;
+    }
+}
+
+
+

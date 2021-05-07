@@ -1,0 +1,30 @@
+<% if (typeof errors != 'undefined') { %>
+  <% errors.forEach(err => { %>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <%= err.msg %> 
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+   </div>
+  <% }) %>
+<% } %>
+
+<!-- If there is a message flashed -->
+<% if (locals.success_msg != '') { %>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <%= locals.success_msg %> 
+   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+ </div>
+<% } %>
+
+<% if (locals.error_msg != '') { %>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <%= locals.error_msg %> 
+   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+ </div>
+<% } %>
+
+<% if (locals.error != '') { %>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <%= locals.error %> 
+   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+ </div>
+<% } %>

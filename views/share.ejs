@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share File</title>
+
+    <link rel="stylesheet" href="/static/css/share.css">
+    <script src="/static/js/share.js" defer></script>
+    
+    <style>
+        html {
+            position: relative;
+        }
+        
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px 6rem 1.3rem 3rem;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+        }
+    </style>
+</head>
+
+<body class="body col-flex-center">
+    <nav class="navbar">
+        <a href="/home" ><img class="logo" src="/static/assets/rocket.svg" style="height: 60px; padding: 5px;" alt=""></a>
+    </nav> 
+
+    <section class="upload-container col-flex-center">
+        <div class="drop-zone col-flex-center">
+            <div class="icon-container">
+                <img src="/static/assets/file.svg" alt="file icon" class="left" draggable="false">
+                <img src="/static/assets/file.svg" alt="file icon" class="center" draggable="false">
+                <img src="/static/assets/file.svg" alt="file icon" class="right" draggable="false">
+            </div>
+
+            <input type="file" id="fileupload" class="hide" required>
+            <div class="title">Drop your files here or <span class="browseBtn">browse</span></div>
+        </div>
+
+        <div class="progress-container hide">
+            <div class="bg-progress"></div>
+            
+            <!-- DOUBT -->
+            <div class="inner-container">
+                <div class="title">Uploading ...</div>
+                <div class="percent-container"><span id="percent">0</span>%</div>
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+
+        <div class="link-container col-flex-center hide">
+            <p id="expire-title">Link expires in <span id="expire-hrs">24</span> hours</p>
+            <div class="sharing-container col-flex-center">
+                <div class="input-container">
+                    <input type="text" readonly="true" class="no-focus-outline">
+                    <img class="copy-icon" src="/static/assets/copyicon.svg"></img>
+                </div>
+
+                <p>Send via Email</p>
+                <div class="email-container">
+                    <form id="mail-form">
+                        <div class="form-group">
+                            <label for="sender">You're Email ID</label>
+                            <!-- <input type="email" placeholder="sender's email address" name="sender" id="sender"> -->
+                            <input type="email" name="sender" id="sender" class="no-focus-outline" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reciever">Reciever's Email ID</label>
+                            <!-- <input type="email" placeholder="reciever's email address" name="reciever" id="reciever"> -->
+                            <input type="email" name="reciever" id="reciever" class="no-focus-outline" required>
+                        </div>
+
+                        <div class="btn row-flex-center">
+                            <!-- <button class="no-focus-outline">Send Mail</button> -->
+                            <button type="submit">Send Mail</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="toast">
+
+    </div>
+</body>
+
+</html>
