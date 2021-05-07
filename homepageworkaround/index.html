@@ -24,7 +24,7 @@
       <use xlink:href="/static/assets/images/sprite.svg#menu"></use>
     </svg>
       <ul class="list nav__list collapsible__content">
-          <li class="nav__item"><a href="/">Home</a></li>
+          <li class="nav__item"><a href="/home">Home</a></li>
           <li class="nav__item"><a href="/users/login">Login</a></li>
           <li class="nav__item"><a href="/users/register">Sign Up</a></li>
           <li class="nav__item"><a href="/share">Share</a></li>
@@ -42,7 +42,7 @@
         <p class="hero__tagline">
           Share your files in less than 60 seconds.
         </p>
-        <a href="" class="btn btn--accent btn--stretched">Share File</a>
+        <a href="/share" class="btn btn--accent btn--stretched">Share File</a>
       </header>
       <picture data-aos="zoom-in">
         <source type="image/webp" srcset="/static/assets/images/banner.webp 1x, /images/banner@2x.webp 2x" />
@@ -91,7 +91,7 @@
               <li class="list__item">Participate in discussion forums</li>
               <li class="list__item">Create private files</li>
             </ul>
-            <button class="btn btn--outline btn--block">Share Now</button>
+            <button class="btn btn--outline btn--block" onclick="redirect('/share')">Share Now</button>
           </div>
         </div>
       </div>
@@ -111,7 +111,7 @@
               <li class="list__item">1000 MB Storage</li>
               <li class="list__item">Participate in discussion forums</li>
             </ul>
-            <button class="btn btn--outline btn--block">Register Now</button>
+            <button class="btn btn--outline btn--block" onclick="redirect('/users/register')" >Register Now</button>
           </div>
         </div>
       </div>
@@ -156,7 +156,7 @@
           So easy, even a caveman could do it.
         </p>
         <!-- TODO : redirect to about page -->
-        <a href="#" class="link-arrow">Learn More</a>
+        <!-- <a href="#" class="link-arrow">Learn More</a> -->
       </div>
       <picture data-aos="zoom-in-left">
         <source type="image/webp" srcset="/static/assets/images/easy.webp 1x, /images/easy@2x.webp 2x" />
@@ -176,7 +176,7 @@
           We have kept in mind slow connections and have minimised the dependencies of our application for the user to
           have a seamless experience.
         </p>
-        <a href="#" class="link-arrow">Learn More</a>
+        <!-- <a href="#" class="link-arrow">Learn More</a> -->
       </div>
       <picture>
         <source type="image/webp" srcset="/static/assets/images/fast.webp 1x, /images/fast@2x.webp 2x" />
@@ -195,7 +195,7 @@
         <p>
           You can contact the developers of this site on discord, github, gitter channels
         </p>
-        <a href="#" class="link-arrow">Learn More</a>
+        <!-- <a href="#" class="link-arrow">Learn More</a> -->
       </div>
       <picture>
         <source type="image/webp" srcset="/static/assets/images/support.webp 1x, /images/support@2x.webp 2x" />
@@ -351,6 +351,10 @@
         alert('Please mention some id');
       }
     });
+    
+    function redirect(url) {
+      window.location = url;
+    }
   </script>
 </body>
 

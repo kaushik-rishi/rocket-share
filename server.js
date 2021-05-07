@@ -51,7 +51,7 @@ mongoose.connect(config.DB_CONN_STRING, {
 })
     .then(() => {
         app.listen(PORT, () => {
-            console.log(`Server started on http://localhost:${PORT}`);
+            console.log(`Server started on https://rocketfileshare.herokuapp.com/ ${PORT}`);
         });
     })
     .catch((err) => {
