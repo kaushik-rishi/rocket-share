@@ -44,6 +44,10 @@ app.use(require('./utils/globalVarsMiddleware'));
 // routes
 app.use('/', require('./routes'));
 
+app.get('/', (req, res) => {
+    res.redirect('/home');
+});
+
 const PORT = process.env.PORT || 5000;
 mongoose.connect(config.DB_CONN_STRING, {
     useNewUrlParser: true,
