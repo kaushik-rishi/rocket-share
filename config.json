@@ -1,5 +1,3 @@
 {
-    "DB_CONN_STRING": "mongodb+srv://kaushikrishi:Kamal_123@cluster0.pjncu.mongodb.net/rfsdb?retryWrites=true&w=majority",
-    "DB_CONN_STRING_PROD": "mongodb://localhost/rfsdblocal",
     "BCRYPT_SALT_ROUNDS": 10
 }

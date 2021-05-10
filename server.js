@@ -1,14 +1,16 @@
-require('dotenv').config();
+if (process.env.NODE_ENV === 'production')
+    require('dotenv').config({ path: `${__dirname}.${process.env.NODE_ENV}` });
+else 
+    require('dotenv').config({ path: `${__dirname}.development` });
 
-const express = require('express');
 // const expressLayouts = require('express-ejs-layouts');
-const path = require('path');
-const mongoose = require('mongoose');
-const flash = require('connect-flash');
-const session = require('express-session');
+const express = require('express'),
+        flash = require('connect-flash'),
+        mongoose = require('mongoose'),
+        path = require('path'),
+        session = require('express-session'),
+        passport = require('passport');
 
-const config = require('./config.json');
-const passport = require('passport');
 const app = express();
 
 // built in middleware
@@ -49,18 +51,18 @@ app.get('/', (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-mongoose.connect(config.DB_CONN_STRING, {
+mongoose.connect(process.env.DB_CONN_STRING, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
     .then(() => {
         app.listen(PORT, () => {
-            console.log(`Server started on https://rocketfileshare.herokuapp.com/ ${PORT}`);
+            console.log(`Server up on ${process.env.APP_ROOT_URL}`);
         });
     })
     .catch((err) => {
         console.error(err);
         app.listen(PORT, () => {
-            console.log(`Server started without DB connection on http://localhost:${PORT}`);
+            console.log(`Server up without DB connection on ${process.env.APP_ROOT_URL}`);
         });
     });
