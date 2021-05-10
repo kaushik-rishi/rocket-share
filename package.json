@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "devStart": "NODE_ENV=development nodemon server.js",
-    "prodStart": "NODE_ENV=production node server.js"
+    "prodStart": "NODE_ENV=production node server.js",
+    "mainStart": "NODE_ENV=college node server.js"
   },
   "keywords": [],
   "author": "",

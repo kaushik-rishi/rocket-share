@@ -1,5 +1,7 @@
 if (process.env.NODE_ENV === 'production')
     require('dotenv').config({ path: `${__dirname}/.env.${process.env.NODE_ENV}` });
+else if (process.env.NODE_ENV === 'college')
+    require('dotenv').config({ path: `${__dirname}/.env.college` });
 else 
     require('dotenv').config({ path: `${__dirname}/.env.development` });
 
