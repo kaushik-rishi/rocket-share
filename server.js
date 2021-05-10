@@ -1,9 +1,8 @@
 if (process.env.NODE_ENV === 'production')
-    require('dotenv').config({ path: `${__dirname}.${process.env.NODE_ENV}` });
+    require('dotenv').config({ path: `${__dirname}/.env.${process.env.NODE_ENV}` });
 else 
-    require('dotenv').config({ path: `${__dirname}.development` });
+    require('dotenv').config({ path: `${__dirname}/.env.development` });
 
-// const expressLayouts = require('express-ejs-layouts');
 const express = require('express'),
         flash = require('connect-flash'),
         mongoose = require('mongoose'),
@@ -51,6 +50,7 @@ app.get('/', (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
+console.log(process.env.DB_CONN_STRING);
 mongoose.connect(process.env.DB_CONN_STRING, {
     useNewUrlParser: true,
     useUnifiedTopology: true
